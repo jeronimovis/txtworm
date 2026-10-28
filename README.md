@@ -8,7 +8,7 @@
 <p align="center"><em>Pronounced “text worm”. A bookworm for plain text.</em></p>
 
 <p align="center">
-  <a href="https://YOUR-USERNAME.github.io/txtworm/"><strong>Try it live →</strong></a>
+  <a href="https://jeronimovis.github.io/txtworm/"><strong>Try it live →</strong></a>
 </p>
 
 ---
@@ -49,7 +49,7 @@ TXTworm skips all of that. Give it any plain text or Markdown file and it shows 
 ## How to use it
 
 ### Online
-Open the [live page](https://YOUR-USERNAME.github.io/txtworm/), then drag a `.txt` or `.md` file onto it, or click **Choose a file**. Your file stays in your browser and is never uploaded anywhere.
+Open the [live page](https://jeronimovis.github.io/txtworm/), then drag a `.txt` or `.md` file onto it, or click **Choose a file**. Your file stays in your browser and is never uploaded anywhere.
 
 ### On your computer
 Download `index.html`, open it in any modern browser, and drop a file on it.

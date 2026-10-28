@@ -117,10 +117,6 @@ Switch to **A5** and click the printer icon. Choose “Save as PDF” to get a l
 - The fonts come from Google Fonts, so the page needs an internet connection to look its best. Offline, it falls back to Garamond, Palatino or Georgia.
 - Opening `text.md` automatically only works when the page is served from a website, such as GitHub Pages. From your own disk, drag the file onto the page instead.
 
-## Logo
-
-The logo files are in [`logo/`](logo/): the icon, the wordmark, the full logo and a favicon, each in light and dark. All are SVGs with the letters turned into shapes, so they display correctly without any fonts installed.
-
 ## License
 
 [MIT](LICENSE). Use it, change it and share it. Just keep the credit.

@@ -23,12 +23,6 @@ No install, build, or account. Any aspiring writer can drop their text in a fold
 
 ![A story in TXTworm, light mode](reading-light.png)
 
-## Why I made it
-
-I read a lot of short stories, and many of them reach me as plain text files. Reading them as they are isn't much fun, so I was always trying to make them look nice. I'd paste them into Google Docs and change the fonts, or export them as EPUB and open them in an e-reader app on my phone.
-
-TXTworm skips all of that. Give it any plain text or Markdown file and it shows it the way a good book would, so the only thing left to do is enjoy reading.
-
 ## Features
 
 - **A single story or a whole book:** one `text.md` gives you a story; a `content.md` plus numbered files or folders gives you an anthology or a novel.
@@ -40,6 +34,8 @@ TXTworm skips all of that. Give it any plain text or Markdown file and it shows 
 - **Covers and pictures:** a cover for the book, a cover for each chapter, and pictures anywhere in the text. Pictures shaped like an A5 page fill a whole page.
 - **English and Spanish:** hyphenation follows the language of the text, and the contents page is titled “Contents” or “Índice”.
 - **Text size** with **−** and **+**, and it remembers your layout, size, style and theme.
+
+![Reading modes: the A5 title page, an A5 chapter opening in light and dark, and the Scroll view](reading-modes.png)
 
 ## Quick start
 

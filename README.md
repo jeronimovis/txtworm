@@ -41,13 +41,6 @@ TXTworm skips all of that. Give it any plain text or Markdown file and it shows 
 - **English and Spanish:** hyphenation follows the language of the text, and the contents page is titled “Contents” or “Índice”.
 - **Text size** with **−** and **+**, and it remembers your layout, size, style and theme.
 
-<table>
-  <tr>
-    <td><img src="open-a-story.png" alt="The Open a story screen in dark mode"></td>
-    <td><img src="reading-dark.png" alt="A story in TXTworm, dark mode"></td>
-  </tr>
-</table>
-
 ## Quick start
 
 ### A single story

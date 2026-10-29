@@ -8,11 +8,11 @@
 <p align="center"><em>Pronounced “text worm”. A bookworm for plain text.</em></p>
 
 <p align="center">
-  <a href="https://YOUR-USERNAME.github.io/txtworm/story/"><strong>See a story →</strong></a>
+  <a href="https://jeronimovis.github.io/txtworm/story/"><strong>See a story →</strong></a>
   &nbsp;·&nbsp;
-  <a href="https://YOUR-USERNAME.github.io/txtworm/antology/"><strong>See an anthology →</strong></a>
+  <a href="https://jeronimovis.github.io/txtworm/antology/"><strong>See an anthology →</strong></a>
   &nbsp;·&nbsp;
-  <a href="https://YOUR-USERNAME.github.io/txtworm/"><strong>Open your own file →</strong></a>
+  <a href="https://jeronimovis.github.io/txtworm/"><strong>Open your own file →</strong></a>
 </p>
 
 ---
@@ -59,7 +59,7 @@ story/
 └── text.md
 ```
 
-Upload the folder to your website or GitHub Pages and open its address. That's it. → [See it in action](https://YOUR-USERNAME.github.io/txtworm/story/)
+Upload the folder to your website or GitHub Pages and open its address. That's it. → [See it in action](https://jeronimovis.github.io/txtworm/story/)
 
 ### A book (anthology or novel)
 Add a contents file, `content.md` (or `content.txt`), and one numbered file per story or chapter:
@@ -74,7 +74,7 @@ antology/
 └── 03.txt
 ```
 
-→ [See it in action](https://YOUR-USERNAME.github.io/txtworm/antology/)
+→ [See it in action](https://jeronimovis.github.io/txtworm/antology/)
 
 The contents file has the book's title on the first line, then an optional subtitle and author, then the list:
 

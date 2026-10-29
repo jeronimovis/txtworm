@@ -21,7 +21,7 @@
 
 No install, build, or account. Any aspiring writer can drop their text in a folder, put it online, and send people a link.
 
-![A story in TXTworm, light mode](reading-light.png)
+![A story in TXTworm, light mode](reading_light.png)
 
 ## Features
 
@@ -35,7 +35,7 @@ No install, build, or account. Any aspiring writer can drop their text in a fold
 - **English and Spanish:** hyphenation follows the language of the text, and the contents page is titled “Contents” or “Índice”.
 - **Text size** with **−** and **+**, and it remembers your layout, size, style and theme.
 
-![Reading modes: the A5 title page, an A5 chapter opening in light and dark, and the Scroll view](reading-modes.png)
+![Reading modes: the A5 title page, an A5 chapter opening in light and dark, and the Scroll view](reading_modes.png)
 
 ## Quick start
 

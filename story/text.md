@@ -1,0 +1,188 @@
+# **Pendular**
+
+Por Jerónimo Visñovezky
+
+## ELLA
+
+Con 40 grados en los termómetros, Ana caminaba refregándose los brazos como si tuviera frío. A las dos y media de la tarde, en verano, las calles secundarias de Santiago del Estero parecían desiertas. El cielo limpio de enero hacía brillar el blanco de las casas. Se preguntó si había hecho bien en no usar anteojos para sol y agachó la vista, por si había cámaras. 
+
+En el piso, las puntas de sus zapatillas iban y venían. Tenía puesta una remera rosada, gastada. Unos jeans claros que hacía unos años tensaba con piernas musculosas y que en ese momento se llenaban de pliegues por la falta de carne. Dos prendas que no usaba hacía rato, que nunca había usado a la vez. Lo único habitual en su vestimenta eran las zapatillas que tenían que ser cómodas por si hacía falta correr.
+
+La cartera negra de cuero, que había sido la cartera de fiestas de su hermana, era chica. Suficiente para cargar la billetera. Hubiese entrado el celular, pero no lo llevó por si el GPS, aún apagado, intentaba delatar su ubicación.
+
+Volvió la cabeza. Se fijó que nadie la estuviera siguiendo, que no venía ningún auto y se detuvo ante la puerta de madera oscura. Conocía bien la casa por fuera. Miró hacia los costados y, antes de tocar el timbre, respiró profundo.
+
+Todavía podía arrepentirse, seguir caminando, volver a su casa y que todo se mantuviese tal y como estaba. Mientras pensaba eso, se abrió la puerta.
+
+Ana dio un salto y llevó la cartera al pecho. Delante suyo, un hombre flaco y alto la escrutaba de arriba a abajo. Ella pensó que de verdad parecía un brujo, un adivino, un hipnotista. Tenía el pelo negro, largo hasta los hombros, ojos intensos rodeados de una sombra oscura y barba candado. En la oreja izquierda, tenía un arito colgante. Una camisa marrón, desteñida, metida en un pantalón negro. Con la vista baja, ella pasó más tiempo mirándole las botas de cuero.
+
+—Yo..
+
+—Por favor, pasá —dijo él, y moviendo el cuerpo para que ella viese lo que había adentro, agregó— no muerdo.
+
+Ana no pudo reír, así que mostró los dientes, escondió la mirada y entró.
+
+## ÉL
+
+A las dos y media de la tarde, Samir había terminado de darle de comer a su madre y espiaba la vereda por una cortina veneciana, tomando un café. Un amarillo tenue teñía las paredes de la habitación amplia, casi sin muebles. La luz del sol se colaba en la dosis exacta para iluminar sin molestar. Él pensaba en revivir el negocio para pagar el auto. 
+
+El éxito había llegado durante los primeros meses de la pandemia. Clientes que lo contactaban en Instagram y evadían controles policiales para verlo. Las mujeres venían por temas de amor y de familia. Para atraer o romper lazos afectivos. Los tipos, para dejar de fumar y para cambiar su futuro profesional. Él les cobró a todos, pero pudo ayudar solamente a los que aceptaron su tratamiento. A los que confiaron. A los que le hicieron caso. 
+
+Por un tiempo, la cosa anduvo tan bien que se animó a meterse en un plan de ahorro de la Fiat. Pero el trabajo fue decayendo al fin de la cuarentena. Ahora, con la malaria que había, si quería licitar el auto tenía que conseguir clientes y si quería retenerlos, tenía que prestar mucha atención. Y ese era su fuerte, saber observar. Adivinaba sin ser adivino. 
+
+Cuando la mujer se paró frente a su puerta, él dejó la taza en el borde de la ventana y tomó una caja con aritos. Eran su toque de gracia. Su carta dorada para quienes buscaban coincidencias. Uno con una pipa. Otro con el dije de una nena. Se detuvo en un aro circular.
+
+La mujer era menuda, rubia, con un rodete mal hecho que dejaba mechones desparramados. Se había maquillado el ojo izquierdo con un tono que no era exactamente el de su piel. Tal vez tapando un moretón. Agarraba la cartera con manos de nudillos blancos, tensos. No tenía anillo de casada. Se decidió por el arito de cupido. Un pendiente que terminaba en un corazón atravesado por una flecha.
+
+La vio dudar y se apuró a abrir la puerta. 
+
+## ELLA
+
+Todavía no se le habían acostumbrado los ojos a la sombra cuando el brujo habló.
+
+—Son cuarenta mil pesos la sesión, por adelantado.
+
+Ella metió la mano en la cartera con tanta violencia que se pinchó. 
+
+—Perdón —dijo instintivamente llevándose el índice a la boca. Rogando que no hubiese sangre.
+
+—No tenés por qué disculparte —dijo él con un tono amable que a ella le pareció actuado.
+
+Ana no pudo moverse. Estaba congelada. No respiraba. Hasta que él agregó:
+
+—Acepto efectivo y transferencia.
+
+Eso la sacó del trance. 
+
+—Efectivo —dijo ella mientras hurgaba en la billetera para pagar.
+
+Cuando se acostumbró a la luz, vio las sillas. En el medio de la habitación, los únicos muebles eran dos sillas completamente distintas. Una grande como de peluquero. Otra simple, como robada de un colegio.
+
+Había algunos estantes empotrados con libros, macetas y otros adornos. En la pared opuesta, una planta de hojas verdes y grandes recibía haces de luz que venían de la ventana. Ana notó que en la luz, como en cámara lenta, flotaban partículas de polvo que iban y venían.
+
+—Tomá asiento, por favor —dijo él girando la silla de peluquero. 
+
+—Prefiero quedarme parada
+
+—Necesito que te sientes para pintarte las uñas. ¿Qué color te gusta?
+
+—La verdad es que yo no..
+
+—Necesito que te relajes —dijo el brujo sacando dos cajas de zapatos sin tapa de uno de los estantes, y hablando más despacio agregó— teneme confianza.
+
+Ana hizo caso y se sentó. Él le puso las dos cajas en el regazo. De la caja de arriba, eligió un cassette virgen que tenía "Pink Floyd" escrito con lapicera en el lomo. Otros cassettes decían "Springsteen", "Roxette", "Dylan".
+
+El brujo se llevó esa caja y Ana vio que la de abajo estaba llena de esmaltes para uñas.
+
+—¿De qué color querés las uñas?
+
+—No me las pinto nunca.
+
+—Algunos colores están secos, pero la mayoría funciona.
+
+—Mire… mirá, yo no vine por esto.
+
+—¿Viniste porque tu novio te pega? Aquí estás a salvo. Aquí adentro no te va a pasar nada.
+
+—¿Podés cerrar la puerta con llave? —dijo ella, tratando de usar un tono amable pero asertivo.
+
+Le pareció que el brujo dudó un momento, pero después dejó la caja sobre un estante, trabó la puerta con un pestillo y caminó hasta un equipo de música plateado, como los de los años 80s. Puso el cassette y antes de que apretase "play", Ana dijo:
+
+—Negras. Quiero que me pintes las uñas negras.
+
+## ÉL
+
+Samir vio que la mujercita temblaba. Actuaba con tal torpeza que se lastimó la mano con la cartera. También le temblaba la voz. Miraba la puerta como esperando que el novio entrase en cualquier momento. Se acercó a la ventana y espió. Afuera no había nadie. Pero este tratamiento no iba a ser fácil. Tal vez veinte sesiones, quizá más. Sonrió.
+
+La pintura de uñas era un truco que usaba para calmar las rabietas de su madre senil. Y sabía exactamente qué tema poner para tranquilizar a esta chica. Apretó un botón y por los parlantes empezó a sonar "Learning to Fly".
+
+Se sentó en la silla, extendió la mano y ella le ofreció la izquierda. Suavemente, con cuidado, le pintó el anular. En ese momento, lo más importante era generar confianza.
+
+—Andrea García ¿Verdad? Preguntame lo que quieras, Andrea.
+
+—¿Esto funciona? —Pregunta típica. 
+
+—La verdad, depende de vos. Yo te tiro unas puntas, pero si no estás dispuesta, se hace difícil.
+
+—¿Fallaste alguna vez?
+
+—Si en serio no quieres dejar de fumar, yo no te puedo obligar. Como no te puedo obligar a dejar a tu novio. Pero si tenés la voluntad sincera de que las cosas cambien, entonces no —dijo, asegurándose de enunciar lentamente las últimas tres palabras— no-fallé-nunca.
+
+—Pero ¿qué pasa si el tratamiento sale mal? —preguntó ella, moviéndose en la silla, como preparándose para levantarse y salir corriendo.
+
+Samir siguió pintando, mirando la mano pero detectando todos sus movimientos. Ella no confiaba, se quería ir. ‘Si sale mal’ —pensó— ‘no volvés y yo sigo llevando a mi vieja al médico en colectivo. Si sale mal, chau Fiatt.’
+
+—Decime la verdad ¿Quién fue tu peor paciente? —dijo, separando la espalda unos centímetros del respaldo.
+
+Había dicho ‘tratamiento’ y ‘paciente’. Esta chica creía. Solamente le hacía falta un empujoncito en la dirección correcta. Entonces decidió bajarle el volumen al personaje. Con algunos clientes había que ser grandilocuente, tenía que ser misterioso y engolar la voz. Pero había un fuego en los ojos de esta mujercita que le decía que la mejor estrategia era la sinceridad. Samir tomó aire.
+
+—Una chica que se mató —dijo, y ella le sacó la mano.
+
+## ELLA
+
+El brujo le pidió la mano de nuevo y le dijo que no se preocupara, que el ser humano es el único capaz de aprender de los errores ajenos. Que se quede tranquila, que a ella no le iba a pasar nada.
+
+A Ana le pareció que por primera vez el brujo era totalmente franco. Dejando caer los hombros, admitió que su tratamiento no llevaba a nadie a hacer cosas en contra de su voluntad. Dijo que la chica se mató porque tenía problemas mentales. Estaba enferma y él no era psiquiatra, así que no había nada que hubiera podido hacer para acomodar los desequilibrios químicos de su cerebro. Que su tratamiento no tenía nada que ver con eso. Él, lo único que hacía, era tratar de motivar, nada más.
+
+Y ahí estaba la cosa. El brujo había admitido que ni era brujo, ni estaba calificado para tratar enfermos mentales. Esta confesión hizo que ella le devolviese la mano izquierda y dejase de esconder la derecha bajo la pierna. Ya no había nada que esconder. Las manos ya no le temblaban.
+
+Los acordes de "Learning to Fly" llenaron la habitación. La guitarra de Gilmour era como un suspiro cósmico en el que Ana se sintió envuelta.
+
+Mientras él aplicaba la segunda capa, el bajo y la batería entraron, marcando un ritmo hipnótico, un latido constante que parecía resonar en el piso de madera.
+
+—Escuchá —dijo el brujo, sin levantar la vista—. No la música. Escuchá la historia que te cuenta.
+
+Ana cerró los ojos. La voz serena de Gilmour hablaba de un alma en pleno vuelo, de navegar contra la corriente, de finalmente ser libre.
+
+—Abrí los ojos —ordenó una voz lejana.
+
+Ella obedeció. El brujo-manicuro seguía pintando, concentrado en su mano. Girando e inclinando la cabeza para ver mejor. En su oreja, el pendiente con un corazón flechado oscilaba entre la luz y la sombra. Y en ese movimiento, capturaba los delgados rayos, reflejándolos y transformándolos. No era un arito dorado, era un corazón de fuego blanco que bailaba por las paredes y el techo. Con la flecha en el medio, iba y venía, hermoso y magnético, un péndulo brillante que trazaba el ritmo de la música.
+
+Iba… y venía.
+
+En el vaivén, Ana veía destellos. No con los ojos, sino con la mente.
+
+Iba… hacia atrás. Una discusión, un grito, la puerta de su casa cerrándose de golpe. El silencio helado que le seguía. 
+
+Venía… hacia adelante. Ella, hace unos años, riendo al lado de su hermana en un asado de domingo con la familia, con la luz del atardecer en el pelo, sintiéndose completa sin necesidad de nadie. 
+
+Iba… una voz acusadora le decía "Mirate, estás hecha una piltrafa."
+
+Venía… su propia mirada en el espejo por las mañanas, culpándose. 
+
+Iba… la voz de su novio, dulce y comprensiva, prometiendo llevarla a un médico. 
+
+Venía… el llanto ahogado y las manos llenas de sangre. Sangre que no había sido ni iba a ser la suya.
+
+El corazón de luz flechado iba y venía, y con cada oscilación, la música de Pink Floyd le pintaba ideas en la mente. “No puedo apartar mis ojos de los cielos giratorios”. Los reflejos del arito danzaban, orbitando, iluminando cada rincón oscuro.
+
+La canción misma se lo decía: “No hay sensación que se compare con esto, animación suspendida, un estado de felicidad”.
+
+El aro de cupido se paró de golpe. Un disco de luz se fijó en la pared, inmóvil, como un ojo dorado que la observaba. Ana pensó que en el reflejo no se veía la flecha.
+
+—El viaje más largo —dijo el brujo, cortando el último acorde de la canción— comienza con una sola decisión. La de levantar el vuelo.
+
+Sin escucharlo, ella preguntó:
+
+—¿Cómo se llamaba la chica?
+
+## ÉL
+
+Samir sintió que la mujercita finalmente se relajaba. La honestidad a veces era una buena estrategia. Siguió pintando cuidadosamente hasta que se dio cuenta de que su clienta respiraba en sincronía con la música. Estaba seguro de que iban a ser sesiones recurrentes. 
+
+Le pidió que abriera los ojos. Quería asegurarse de que ella hubiera visto bien el arito antes del golpe de efecto de la frase final. Nada como una frase inspiradora como remate de "Learning to Fly". Era hora de subirle el volumen al personaje, de hacer un poco de teatro. Pero le sorprendió la pregunta.
+
+—¿Cómo se llamaba la chica? 
+
+Y la verdad era que él no se acordaba. Pero inventó.
+
+—Matilde 
+
+No debe haber estado muy lejos. Sabía que el nombre empezaba con eme. Era una chica atractiva, menuda, de pelo negro arreglado en un rodete tirante. Había venido buscando alternativas a las pastillas antidepresivas. Samir le recomendó tomar más sesiones, dos por semana. Después tres: lunes, miércoles y viernes. Una fortuna. Y el tratamiento no le hizo bien. El rodete se le había ido aflojando con el tiempo y en las últimas sesiones era apenas una atado de mechones. Ella había venido en el punto alto de la cuarentena, en medio del éxito. Los clientes entraban y salían como hormigas. Imposible acordarse de todos los nombres. Los leía de la lista de turnos del día. Pero se acordaba de que era con eme. Mariela, tal vez Miriam. Se jugó por Matilde y de golpe, tuvo la boca de la mujer a la altura de su oreja gritando sin separar los dientes:
+
+—¡Mariana\! ¡Mi hermana se llamaba Mariana, hijo de puta\!
+
+Samir sintió un ardor en el cuello, abajo del arito. Trastabilló y cayó de la silla. Se incorporó. En realidad quiso incorporarse, pero a mitad de camino se mareó y se dejó caer para recuperarse. Pensó en su madre enferma que dormía la siesta en la pieza del fondo. La mujer ahora estaba parada delante suyo con unas tijeras rojas en la mano derecha. Tenía los ojos bien abiertos y los dientes a la vista. Hubiese jurado que medía dos metros. Estaba agitada y empezando a llorar dijo:
+
+—Yo sabía que te iba a agarrar. Chanta, hijo de puta. 
+

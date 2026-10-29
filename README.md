@@ -19,7 +19,7 @@
 
 **TXTworm** is a single HTML page that turns plain `.txt` and `.md` files into beautiful, book-like reading. Put it next to one story and it shows that story. Put it next to a list of stories or chapters and it becomes a book, with a cover, a title page, a table of contents and numbered pages.
 
-No install, no build, no account. Any aspiring writer can drop their text in a folder, put it online, and send people a link.
+No install, build, or account. Any aspiring writer can drop their text in a folder, put it online, and send people a link.
 
 ![A story in TXTworm, light mode](reading-light.png)
 
@@ -34,7 +34,7 @@ TXTworm skips all of that. Give it any plain text or Markdown file and it shows 
 - **A single story or a whole book:** one `text.md` gives you a story; a `content.md` plus numbered files or folders gives you an anthology or a novel.
 - **Two layouts:**
   - **Scroll:** continuous text in a calm central column.
-  - **A5:** real numbered A5 pages, ready to print or save as a PDF.
+  - **A5:** renders numbered A5 pages, ready to print or save as a PDF.
 - **Five styles:** Book, Academic, Editorial, Concrete and Modern, each in light and dark.
 - **Book typography:** justified, hyphenated paragraphs; a drop cap on each story's first paragraph; curly quotes, em dashes and ellipses.
 - **Covers and pictures:** a cover for the book, a cover for each chapter, and pictures anywhere in the text. Pictures shaped like an A5 page fill a whole page.

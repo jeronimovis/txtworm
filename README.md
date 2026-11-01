@@ -16,7 +16,7 @@
 </p>
 
 <p align="center">
-  <a href="https://jeronimovis.github.io/txtworm/download/txtworm.zip"><strong>⬇ Download TXTworm (txtworm.zip)</strong></a>
+  <a href="https://jeronimovis.github.io/txtworm/download/txtworm.zip"><strong>⬇ Download TXTworm</strong></a>
 </p>
 
 ---
@@ -25,7 +25,7 @@
 
 No install, build, or account. Any aspiring writer can drop their text in a folder, put it online, and send people a link.
 
-![A story in TXTworm, light mode](reading-light.png)
+![A story in TXTworm, light mode](reading_light.png)
 
 ## Features
 
@@ -39,11 +39,11 @@ No install, build, or account. Any aspiring writer can drop their text in a fold
 - **English and Spanish:** hyphenation follows the language of the text, and the contents page is titled “Contents” or “Índice”.
 - **Text size** with **−** and **+**, and it remembers your layout, size, style and theme.
 
-![Reading modes: the A5 title page, an A5 chapter opening in light and dark, and the Scroll view](reading-modes.png)
+![Reading modes: the A5 title page, an A5 chapter opening in light and dark, and the Scroll view](reading_modes.png)
 
 ## Quick start
 
-[Download txtworm.zip](https://jeronimovis.github.io/txtworm/download/txtworm.zip) and unzip it to get `index.html`.
+[Download TXTworm](https://jeronimovis.github.io/txtworm/download/txtworm.zip) and unzip it to get `index.html`.
 
 ### A single story
 Put `index.html` and your story, named `text.md` (or `text.txt`), in a folder:
@@ -173,7 +173,7 @@ In the A5 layout, any picture shaped like an A5 page (148 × 210 mm, about 5:7) 
 Continuous text in a central column. In a book, the contents links jump to each chapter, and the list button in the toolbar takes you back to the contents.
 
 ### A5
-Numbered A5 pages, laid out like a printed book:
+Real A5 pages, laid out like a printed book:
 
 - The front pages (cover, title page and contents) have no numbers.
 - Page 1 is the first page of the first story or chapter, always on a right-hand page.
@@ -208,7 +208,7 @@ It then appears in the Aa menu. Comments in the file explain each setting.
 
 ## Reading on your own computer
 
-[Download txtworm.zip](https://jeronimovis.github.io/txtworm/download/txtworm.zip), unzip it and open `index.html` in any modern browser, then:
+[Download TXTworm](https://jeronimovis.github.io/txtworm/download/txtworm.zip), unzip it and open `index.html` in any modern browser, then:
 
 - **A story:** click **Choose a file**, or drag a `.txt` or `.md` file onto the page.
 - **A book:** click **Open a folder** (the folder button) and choose the book's folder, or drag the whole folder onto the page.
@@ -234,7 +234,7 @@ https://example.com/stories/index.html?file=the-lamplighter.md
 
 ## Good to know
 
-- Everything is in one file, `index.html`. There's nothing to install and no build step. The latest version is always in [txtworm.zip](https://jeronimovis.github.io/txtworm/download/txtworm.zip).
+- Everything is in one file, `index.html`. There's nothing to install and no build step. The [download](https://jeronimovis.github.io/txtworm/download/txtworm.zip) always has the latest version.
 - Fonts come from Google Fonts, so the page needs an internet connection to look its best. Offline, it falls back to fonts already on your computer.
 - If a folder has both a `text.md` and a `content.md`, the book wins.
 

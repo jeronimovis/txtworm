@@ -23,21 +23,23 @@
 
 **TXTworm** is a single HTML page that turns plain `.txt` and `.md` files into beautiful, book-like reading. Put it next to one story and it shows that story. Put it next to a list of stories or chapters and it becomes a book, with a cover, a title page, a table of contents and numbered pages.
 
-No install, build, or account. Any aspiring writer can drop their text in a folder, put it online, and send people a link.
+Nothing to install or build, and you don't need an account. Any aspiring writer can drop their text in a folder, put it online, and send people a link.
 
 ![A story in TXTworm, light mode](reading_light.png)
 
 ## Features
 
 - **A single story or a whole book:** one `text.md` gives you a story; a `content.md` plus numbered files or folders gives you an anthology or a novel.
+- **Paste and read:** paste any text into the opening screen, or use the clipboard button in the toolbar, and it opens as a story.
 - **Two layouts:**
   - **Scroll:** continuous text in a calm central column.
   - **A5:** renders numbered A5 pages, ready to print or save as a PDF.
 - **Five styles:** Book, Academic, Editorial, Concrete and Modern, each in light and dark.
 - **Book typography:** justified, hyphenated paragraphs; a drop cap on each story's first paragraph; curly quotes, em dashes and ellipses.
 - **Covers and pictures:** a cover for the book, a cover for each chapter, and pictures anywhere in the text. Pictures shaped like an A5 page fill a whole page.
-- **English and Spanish:** hyphenation follows the language of the text, and the contents page is titled “Contents” or “Índice”.
-- **Text size** with **−** and **+**, and it remembers your layout, size, style and theme.
+- **Six text languages:** English, Spanish, Chinese, Japanese, Hindi and Russian are detected automatically. Each gets its own hyphenation, fonts and book words (“Contents”, “Índice”, “目录”…). Other languages are read as English.
+- **An interface in your language:** menus and the opening screen follow your browser's language, and you can switch at any time.
+- **Text size** with **−** and **+**, and it remembers your layout, size, style, theme and language.
 
 ![Reading modes: the A5 title page, an A5 chapter opening in light and dark, and the Scroll view](reading_modes.png)
 
@@ -166,6 +168,7 @@ In the A5 layout, any picture shaped like an A5 page (148 × 210 mm, about 5:7) 
 - **Scene breaks:** a line with `---` or `***`.
 - **Emphasis:** `*italics*` and `**bold**`. Quotes, `>`, lists and links also work in `.md` files.
 - In a `.txt` file, the first line is the title if it's short and doesn't end in a full stop.
+- In a pasted text without a heading or header block, the first line is the title if it's short.
 
 ## Layouts
 
@@ -173,7 +176,7 @@ In the A5 layout, any picture shaped like an A5 page (148 × 210 mm, about 5:7) 
 Continuous text in a central column. In a book, the contents links jump to each chapter, and the list button in the toolbar takes you back to the contents.
 
 ### A5
-Real A5 pages, laid out like a printed book:
+A5 pages, laid out like a printed book:
 
 - The front pages (cover, title page and contents) have no numbers.
 - Page 1 is the first page of the first story or chapter, always on a right-hand page.
@@ -206,14 +209,27 @@ All the looks are kept apart from how the page works, so a new style never break
 
 It then appears in the Aa menu. Comments in the file explain each setting.
 
+## Languages
+
+TXTworm works out the language of each text by itself. The language decides:
+
+- hyphenation and the words the page writes (“Contents”, “Chapter 3”),
+- the fonts: Chinese, Japanese, Hindi and Russian get matching Noto fonts, while Latin letters keep the style's own font,
+- the typography: no drop cap in Chinese, Japanese or Hindi, and a two-character indent in Chinese and Japanese.
+
+In the A5 layout, Chinese and Japanese paragraphs break between pages by character, following the usual rules: a line never starts with 。 or 、.
+
+The interface (menus, buttons and the opening screen) appears in English, Spanish, Chinese, Hindi, Russian or Japanese, following your browser. Choose another from the row at the bottom of the opening screen, or from the language button in the toolbar. TXTworm remembers your choice.
+
 ## Reading on your own computer
 
 [Download TXTworm](https://jeronimovis.github.io/txtworm/download/txtworm.zip), unzip it and open `index.html` in any modern browser, then:
 
 - **A story:** click **Choose a file**, or drag a `.txt` or `.md` file onto the page.
 - **A book:** click **Open a folder** (the folder button) and choose the book's folder, or drag the whole folder onto the page.
+- **A text you copied:** paste it into the box on the opening screen and press **Read this text** (or <kbd>Ctrl</kbd> + <kbd>Enter</kbd>). While reading, the clipboard button in the toolbar opens the same box.
 
-Browsers don't let a page read the other files in its folder by itself, so on your computer you open them by hand. Online, the page finds everything on its own. Your files stay in your browser and are never uploaded anywhere.
+Browsers don't let a page read the other files in its folder by itself, so on your computer you open them by hand. Online, the page finds everything on its own. Your files and pasted texts stay in your browser and are never uploaded anywhere.
 
 To open a different story in the same online folder, add `?file=` to the address:
 
@@ -229,13 +245,15 @@ https://example.com/stories/index.html?file=the-lamplighter.md
 | <kbd>P</kbd> | Switch between Scroll and A5 |
 | <kbd>D</kbd> | Light / dark mode |
 | <kbd>S</kbd> | Next style |
+| <kbd>L</kbd> | Language menu |
 | <kbd>C</kbd> | Go to the contents (books) |
 | <kbd>O</kbd> | Open a file |
+| <kbd>Ctrl</kbd> + <kbd>Enter</kbd> | Read the pasted text |
 
 ## Good to know
 
 - Everything is in one file, `index.html`. There's nothing to install and no build step. The [download](https://jeronimovis.github.io/txtworm/download/txtworm.zip) always has the latest version.
-- Fonts come from Google Fonts, so the page needs an internet connection to look its best. Offline, it falls back to fonts already on your computer.
+- Fonts come from Google Fonts, so the page needs an internet connection to look its best. Fonts for Chinese, Japanese, Hindi and Russian load only when a text needs them. Offline, the page falls back to fonts already on your computer.
 - If a folder has both a `text.md` and a `content.md`, the book wins.
 
 ## Logo

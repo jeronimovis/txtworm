@@ -73,14 +73,29 @@ body.a5{background:var(--bg)}
 .bar svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
 .bar .sc{font-variant:small-caps;letter-spacing:.06em}
 @media (max-width:560px){ .bar .hide-sm{display:none} .bar button{padding:0 8px} }
+@media (max-width:440px){ .bar .size{display:none} .bar .sep{margin:0 1px} .bar button{padding:0 6px;min-width:28px} }
 .menu{position:fixed;top:62px;left:50%;transform:translateX(-50%);z-index:11;display:flex;flex-wrap:wrap;justify-content:center;
   gap:2px;padding:5px;border-radius:18px;max-width:calc(100vw - 24px);
   background:var(--chrome);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
   border:1px solid var(--rule);box-shadow:0 4px 18px rgba(0,0,0,.1);font-family:var(--font-ui)}
+#langMenu{width:max-content}
 .menu button{appearance:none;border:0;background:none;color:var(--ink);font:inherit;font-size:15px;height:32px;padding:0 13px;
   border-radius:999px;cursor:pointer}
 .menu button:hover{background:color-mix(in srgb,var(--ink) 8%,transparent)}
 .menu button[aria-pressed=true]{background:var(--ink);color:var(--paper)}
+
+.pastepanel{position:fixed;top:62px;left:50%;transform:translateX(-50%);z-index:11;display:flex;flex-direction:column;
+  gap:.5rem;padding:10px;border-radius:18px;width:min(30rem,calc(100vw - 24px));
+  background:var(--chrome);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  border:1px solid var(--rule);box-shadow:0 4px 18px rgba(0,0,0,.1);font-family:var(--font-ui)}
+.pastepanel textarea{font:inherit;font-size:15px;line-height:1.5;color:var(--ink);background:var(--paper);
+  border:1px solid var(--rule);border-radius:10px;padding:.6em .8em;min-height:8em;resize:vertical}
+.pastepanel textarea::placeholder{color:var(--muted);font-style:italic}
+.pastepanel textarea:focus{outline:none;border-color:var(--accent)}
+.pastepanel button{appearance:none;align-self:center;font:inherit;font-size:15px;height:32px;padding:0 16px;border-radius:999px;
+  cursor:pointer;border:1px solid var(--ink);background:var(--ink);color:var(--paper)}
+.pastepanel button:disabled{opacity:.4;cursor:default}
+:root[data-style=concrete] :is(.pastepanel,.pastepanel textarea,.pastepanel button){border-radius:0}
 
 /* ---------- Prose ---------- */
 .prose{line-height:var(--leading);text-align:justify;hyphens:auto;-webkit-hyphens:auto;
@@ -222,11 +237,23 @@ a.toc-row:hover .toc-title{color:var(--accent)}
   border:1px solid var(--ink);background:var(--ink);color:var(--paper)}
 #welcome button.ghost{background:none;color:var(--ink);border-color:var(--rule)}
 #welcome small{display:block;margin-top:2rem;color:var(--muted);font-size:.95rem;letter-spacing:.02em;max-width:34em;line-height:1.5}
+#welcome .paste{width:min(34em,100%);margin:1.8rem 0 0;display:flex;flex-direction:column;gap:.6rem;align-items:stretch}
+#welcome textarea{font:inherit;font-size:1rem;line-height:1.5;color:var(--ink);background:var(--paper);
+  border:1px solid var(--rule);border-radius:10px;padding:.8em 1em;min-height:9em;resize:vertical;text-align:left}
+#welcome textarea::placeholder{color:var(--muted);font-style:italic}
+#welcome textarea:focus{outline:none;border-color:var(--accent)}
+#welcome .paste button{align-self:center}
+#welcome .paste button:disabled{opacity:.4;cursor:default}
+:root[data-style=concrete] #welcome textarea{border-radius:0}
+#welcome .langs{display:flex;flex-wrap:wrap;justify-content:center;gap:.1rem .5rem;margin-top:1.6rem;max-width:34em}
+#welcome .langs button{background:none;border:0;border-radius:0;color:var(--muted);font-size:.95rem;padding:.2em .3em}
+#welcome .langs button:hover{color:var(--ink)}
+#welcome .langs button[aria-pressed=true]{color:var(--ink);text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:.3em}
 #welcome .msg{color:var(--accent);font-style:normal;font-size:1rem;margin:1.2rem 0 0}
 #loading{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;color:var(--muted);
   font-style:italic;font-size:1.1rem;opacity:0;animation:fadein .3s .5s forwards}
 @keyframes fadein{to{opacity:1}}
-.drop::after{content:"Drop to read";position:fixed;inset:12px;border:2px dashed var(--accent);border-radius:14px;
+.drop::after{content:attr(data-drop);position:fixed;inset:12px;border:2px dashed var(--accent);border-radius:14px;
   display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:2.2rem;
   color:var(--accent);background:color-mix(in srgb,var(--paper) 85%,transparent);z-index:20}
 
@@ -436,6 +463,19 @@ a.toc-row:hover .toc-title{color:var(--accent)}
 :root[data-style=modern] :is(.page-head,.page-num){font-variant:normal;text-transform:uppercase;letter-spacing:.18em;
   font-weight:600;font-size:calc(var(--fsA5) * .6)}
 :root[data-style=modern] .prose .fin{font-size:.6em}
+
+/* =====================================================================
+   LANGUAGES
+   Set by the script on <html data-lang=…>. Fonts for Chinese, Japanese,
+   Hindi and Russian are added to each style's fonts by the script.
+   ===================================================================== */
+/* No drop cap where it doesn't belong: the first paragraph simply starts flush */
+:root:is([data-lang=zh],[data-lang=ja],[data-lang=hi]) .prose p.dropcap::first-letter{float:none;font:inherit;color:inherit;
+  margin:0;padding:0;line-height:inherit;background:none}
+:root:is([data-lang=zh],[data-lang=ja],[data-lang=hi]) .prose p.dropcap::first-line{font-variant-caps:normal;letter-spacing:normal}
+/* Chinese and Japanese paragraphs are indented by two characters */
+:root:is([data-lang=zh],[data-lang=ja]):not([data-style=concrete],[data-style=modern]){--indent:2em}
+:root:is([data-lang=zh],[data-lang=ja]) .prose{font-feature-settings:"kern"}
 </style>
 </head>
 <body>
@@ -447,6 +487,9 @@ a.toc-row:hover .toc-title{color:var(--accent)}
   </button>
   <button id="folderBtn" class="hide-sm" title="Open a folder (a whole book)" aria-label="Open a folder">
     <svg viewBox="0 0 24 24"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H10l2 2h6.5A1.5 1.5 0 0 1 20 7.5v11a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 18.5z"/></svg>
+  </button>
+  <button id="pasteOpenBtn" title="Paste a text" aria-label="Paste a text">
+    <svg viewBox="0 0 24 24"><path d="M9 4.5H6.5A1.5 1.5 0 0 0 5 6v13.5A1.5 1.5 0 0 0 6.5 21h11a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H15"/><rect x="9" y="3" width="6" height="3" rx="1"/><path d="M9 11h6M9 14h6M9 17h4"/></svg>
   </button>
   <button id="tocBtn" title="Contents (C)" aria-label="Contents" hidden>
     <svg viewBox="0 0 24 24"><path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01"/></svg>
@@ -462,13 +505,19 @@ a.toc-row:hover .toc-title{color:var(--accent)}
   <button id="bigger" title="Larger text (+)" aria-label="Larger text">+</button>
   <span class="sep"></span>
   <button id="styleBtn" title="Style (S)" aria-label="Change style" hidden>Aa</button>
+  <button id="langBtn" title="Language (L)" aria-label="Change language"><span class="sc">en</span></button>
   <button id="themeBtn" title="Light / dark (D)" aria-label="Toggle dark mode"></button>
   <button id="printBtn" class="hide-sm" title="Print / save as PDF" aria-label="Print">
     <svg viewBox="0 0 24 24"><path d="M7 9V4h10v5M7 17H5a1 1 0 0 1-1-1v-6a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1h-2M7 14h10v6H7z"/></svg>
   </button>
 </nav>
 
+<div class="pastepanel" id="pastePanel" hidden>
+  <textarea id="pasteBox2" placeholder="Paste your text here" aria-label="Paste text to read"></textarea>
+  <button id="pasteBtn2" disabled title="Read the pasted text (Ctrl+Enter)">Read this text</button>
+</div>
 <div class="menu" id="styleMenu" role="menu" aria-label="Style" hidden></div>
+<div class="menu" id="langMenu" role="menu" aria-label="Language" hidden></div>
 <div id="loading">Opening…</div>
 
 <section id="welcome" hidden>
@@ -479,8 +528,13 @@ a.toc-row:hover .toc-title{color:var(--accent)}
     <button id="welcomeFolder" class="ghost">Open a folder</button>
     <button id="sampleBtn" class="ghost">Read a sample</button>
   </div>
+  <div class="paste">
+    <textarea id="pasteBox" placeholder="…or paste your text here" aria-label="Paste text to read"></textarea>
+    <button id="pasteBtn" disabled title="Read the pasted text (Ctrl+Enter)">Read this text</button>
+  </div>
   <p class="msg" id="welcomeMsg" hidden></p>
-  <small>Tip: put <code>text.md</code> next to this page on your site, or a <code>content.md</code> with numbered chapters, and it opens by itself.</small>
+  <small id="welcomeTip">Tip: put <code>text.md</code> next to this page on your site, or a <code>content.md</code> with numbered chapters, and it opens by itself.</small>
+  <nav class="langs" id="welcomeLangs" aria-label="Language"></nav>
 </section>
 
 <main id="column" class="prose" hidden></main>
@@ -533,9 +587,158 @@ const STYLE_ALIASES = { classic: "book" };   // older names still work
 
 /* Words the page itself writes, by language of the text */
 const WORDS = {
-  en: { contents:"Contents", chapter:"Chapter", missing:"missing" },
-  es: { contents:"Índice",   chapter:"Capítulo", missing:"falta" },
+  en: { name:"English", contents:"Contents",   chapter: n => "Chapter " + n,  missing:"missing" },
+  es: { name:"Español", contents:"Índice",     chapter: n => "Capítulo " + n, missing:"falta" },
+  zh: { name:"中文",     contents:"目录",        chapter: n => "第" + n + "章",  missing:"缺失" },
+  hi: { name:"हिन्दी",    contents:"विषय सूची",   chapter: n => "अध्याय " + n,   missing:"अनुपलब्ध" },
+  ru: { name:"Русский", contents:"Содержание", chapter: n => "Глава " + n,    missing:"нет файла" },
+  ja: { name:"日本語",   contents:"目次",        chapter: n => "第" + n + "章",  missing:"見つかりません" },
 };
+/* Fonts added for each script (a serif and a sans, matched to the style).
+   Google Fonts sends only the characters a page uses. */
+const SCRIPT_FONTS = {
+  zh: { serif:"Noto Serif SC", sans:"Noto Sans SC", spec:":wght@400;600;700" },
+  ja: { serif:"Noto Serif JP", sans:"Noto Sans JP", spec:":wght@400;600;700" },
+  hi: { serif:"Noto Serif Devanagari", sans:"Noto Sans Devanagari", spec:":wght@400;600;700" },
+  ru: { serif:"Noto Serif", sans:"Noto Sans", spec:":ital,wght@0,400;0,600;0,700;1,400" },
+};
+
+/* =====================================================================
+   INTERFACE LANGUAGES
+   Menus, buttons and the opening screen follow the reader's browser
+   language (or the choice in the language menu). Anything other than
+   these six is shown in English. The words inside a book ("Contents",
+   "Chapter 3") follow the language of the text instead (WORDS above).
+   ===================================================================== */
+const UI = {
+  en: {
+    openStory:"Open a story", dropHint:"Drop a .md or .txt file, or a whole folder, anywhere on this page.",
+    chooseFile:"Choose a file", openFolder:"Open a folder", sample:"Read a sample",
+    pasteHere:"…or paste your text here", pastePanel:"Paste your text here", readThis:"Read this text", readThisTitle:"Read the pasted text (Ctrl+Enter)",
+    tip:"Tip: put {text} next to this page on your site, or a {content} with numbered chapters, and it opens by itself.",
+    noFiles:"No .txt or .md files were found there.", opening:"Opening…", dropToRead:"Drop to read",
+    open:"Open", openTitle:"Open a .md or .txt file (O)", folderTitle:"Open a folder", pasteTitle:"Paste a text", contentsTitle:"Contents (C)",
+    scroll:"scroll", scrollTitle:"Continuous text (P)", a5Title:"A5 pages (P)", smaller:"Smaller text (−)", larger:"Larger text (+)",
+    style:"Style", language:"Language", theme:"Light / dark (D)", print:"Print / save as PDF",
+    styles:{ book:"Book", academic:"Academic", editorial:"Editorial", concrete:"Concrete", modern:"Modern" },
+    needFolder:"To read the chapters, open the whole folder (folder button), not just this file.",
+    noChapters:"No chapter files were found next to this page. Name them 1.md, 01.md or a.md (or .txt), or put each in a numbered folder as 1/text.md.",
+    imgMissing:"Image not found: ", fileMissing:"File not found: ", untitled:"Untitled",
+  },
+  es: {
+    openStory:"Abrir un cuento", dropHint:"Suelta un archivo .md o .txt, o una carpeta entera, en cualquier parte de esta página.",
+    chooseFile:"Elegir un archivo", openFolder:"Abrir una carpeta", sample:"Leer un ejemplo",
+    pasteHere:"…o pega tu texto aquí", pastePanel:"Pega tu texto aquí", readThis:"Leer este texto", readThisTitle:"Leer el texto pegado (Ctrl+Enter)",
+    tip:"Consejo: pon {text} junto a esta página en tu sitio, o un {content} con capítulos numerados, y se abrirá solo.",
+    noFiles:"No se encontraron archivos .txt ni .md allí.", opening:"Abriendo…", dropToRead:"Suelta para leer",
+    open:"Abrir", openTitle:"Abrir un archivo .md o .txt (O)", folderTitle:"Abrir una carpeta", pasteTitle:"Pegar un texto", contentsTitle:"Índice (C)",
+    scroll:"continuo", scrollTitle:"Texto continuo (P)", a5Title:"Páginas A5 (P)", smaller:"Texto más pequeño (−)", larger:"Texto más grande (+)",
+    style:"Estilo", language:"Idioma", theme:"Claro / oscuro (D)", print:"Imprimir / guardar como PDF",
+    styles:{ book:"Libro", academic:"Académico", editorial:"Editorial", concrete:"Hormigón", modern:"Moderno" },
+    needFolder:"Para leer los capítulos, abre la carpeta entera (botón de carpeta), no solo este archivo.",
+    noChapters:"No se encontraron capítulos junto a esta página. Nómbralos 1.md, 01.md o a.md (o .txt), o pon cada uno en una carpeta numerada, como 1/text.md.",
+    imgMissing:"Imagen no encontrada: ", fileMissing:"Archivo no encontrado: ", untitled:"Sin título",
+  },
+  zh: {
+    openStory:"打开一个故事", dropHint:"将 .md 或 .txt 文件，或整个文件夹，拖放到本页任意位置。",
+    chooseFile:"选择文件", openFolder:"打开文件夹", sample:"阅读示例",
+    pasteHere:"……或在此粘贴文本", pastePanel:"在此粘贴文本", readThis:"阅读此文本", readThisTitle:"阅读粘贴的文本（Ctrl+Enter）",
+    tip:"提示：在你的网站上把 {text} 放在本页旁边，或放一个含有编号章节的 {content}，页面就会自动打开。",
+    noFiles:"那里没有找到 .txt 或 .md 文件。", opening:"正在打开…", dropToRead:"松开即可阅读",
+    open:"打开", openTitle:"打开 .md 或 .txt 文件 (O)", folderTitle:"打开文件夹", pasteTitle:"粘贴文本", contentsTitle:"目录 (C)",
+    scroll:"滚动", scrollTitle:"连续文本 (P)", a5Title:"A5 页面 (P)", smaller:"缩小文字 (−)", larger:"放大文字 (+)",
+    style:"样式", language:"语言", theme:"浅色 / 深色 (D)", print:"打印 / 存为 PDF",
+    styles:{ book:"书籍", academic:"学术", editorial:"杂志", concrete:"混凝土", modern:"现代" },
+    needFolder:"要阅读各章，请打开整个文件夹（文件夹按钮），而不只是这个文件。",
+    noChapters:"本页旁边没有找到章节文件。请将它们命名为 1.md、01.md 或 a.md（或 .txt），或把每章放进编号文件夹，如 1/text.md。",
+    imgMissing:"未找到图片：", fileMissing:"未找到文件：", untitled:"无标题",
+  },
+  hi: {
+    openStory:"कहानी खोलें", dropHint:"इस पेज पर कहीं भी .md या .txt फ़ाइल, या पूरा फ़ोल्डर, छोड़ें।",
+    chooseFile:"फ़ाइल चुनें", openFolder:"फ़ोल्डर खोलें", sample:"नमूना पढ़ें",
+    pasteHere:"…या अपना पाठ यहाँ चिपकाएँ", pastePanel:"अपना पाठ यहाँ चिपकाएँ", readThis:"यह पाठ पढ़ें", readThisTitle:"चिपकाया गया पाठ पढ़ें (Ctrl+Enter)",
+    tip:"सुझाव: अपनी साइट पर इस पेज के पास {text} रखें, या क्रमांकित अध्यायों वाली {content} रखें, और यह अपने आप खुल जाएगा।",
+    noFiles:"वहाँ कोई .txt या .md फ़ाइल नहीं मिली।", opening:"खुल रहा है…", dropToRead:"पढ़ने के लिए छोड़ें",
+    open:"खोलें", openTitle:".md या .txt फ़ाइल खोलें (O)", folderTitle:"फ़ोल्डर खोलें", pasteTitle:"पाठ चिपकाएँ", contentsTitle:"विषय सूची (C)",
+    scroll:"स्क्रॉल", scrollTitle:"लगातार पाठ (P)", a5Title:"A5 पेज (P)", smaller:"पाठ छोटा करें (−)", larger:"पाठ बड़ा करें (+)",
+    style:"शैली", language:"भाषा", theme:"हल्का / गहरा (D)", print:"प्रिंट / PDF के रूप में सहेजें",
+    styles:{ book:"पुस्तक", academic:"शैक्षणिक", editorial:"संपादकीय", concrete:"कंक्रीट", modern:"आधुनिक" },
+    needFolder:"अध्याय पढ़ने के लिए केवल यह फ़ाइल नहीं, पूरा फ़ोल्डर खोलें (फ़ोल्डर बटन)।",
+    noChapters:"इस पेज के पास कोई अध्याय फ़ाइल नहीं मिली। उनके नाम 1.md, 01.md या a.md (या .txt) रखें, या हर अध्याय को 1/text.md जैसे क्रमांकित फ़ोल्डर में रखें।",
+    imgMissing:"छवि नहीं मिली: ", fileMissing:"फ़ाइल नहीं मिली: ", untitled:"शीर्षक रहित",
+  },
+  ru: {
+    openStory:"Открыть рассказ", dropHint:"Перетащите файл .md или .txt — или целую папку — в любое место страницы.",
+    chooseFile:"Выбрать файл", openFolder:"Открыть папку", sample:"Прочитать пример",
+    pasteHere:"…или вставьте текст сюда", pastePanel:"Вставьте текст сюда", readThis:"Читать этот текст", readThisTitle:"Читать вставленный текст (Ctrl+Enter)",
+    tip:"Совет: положите {text} рядом с этой страницей на сайте или {content} с пронумерованными главами — и текст откроется сам.",
+    noFiles:"Там не найдено файлов .txt или .md.", opening:"Открытие…", dropToRead:"Отпустите, чтобы читать",
+    open:"Открыть", openTitle:"Открыть файл .md или .txt (O)", folderTitle:"Открыть папку", pasteTitle:"Вставить текст", contentsTitle:"Содержание (C)",
+    scroll:"лента", scrollTitle:"Сплошной текст (P)", a5Title:"Страницы A5 (P)", smaller:"Уменьшить текст (−)", larger:"Увеличить текст (+)",
+    style:"Стиль", language:"Язык", theme:"Светлая / тёмная тема (D)", print:"Печать / сохранить в PDF",
+    styles:{ book:"Книга", academic:"Академический", editorial:"Журнальный", concrete:"Бетон", modern:"Современный" },
+    needFolder:"Чтобы читать главы, откройте всю папку (кнопка папки), а не только этот файл.",
+    noChapters:"Рядом с этой страницей не найдены файлы глав. Назовите их 1.md, 01.md или a.md (или .txt) либо положите каждую главу в пронумерованную папку, например 1/text.md.",
+    imgMissing:"Изображение не найдено: ", fileMissing:"Файл не найден: ", untitled:"Без названия",
+  },
+  ja: {
+    openStory:"物語を開く", dropHint:".md または .txt ファイル、またはフォルダごと、このページのどこにでもドロップしてください。",
+    chooseFile:"ファイルを選ぶ", openFolder:"フォルダを開く", sample:"サンプルを読む",
+    pasteHere:"…またはここにテキストを貼り付け", pastePanel:"ここにテキストを貼り付け", readThis:"このテキストを読む", readThisTitle:"貼り付けたテキストを読む（Ctrl+Enter）",
+    tip:"ヒント：サイト上でこのページの隣に {text} を置くか、番号付きの章を含む {content} を置くと、自動で開きます。",
+    noFiles:"そこには .txt や .md ファイルが見つかりませんでした。", opening:"開いています…", dropToRead:"ドロップして読む",
+    open:"開く", openTitle:".md または .txt ファイルを開く (O)", folderTitle:"フォルダを開く", pasteTitle:"テキストを貼り付け", contentsTitle:"目次 (C)",
+    scroll:"スクロール", scrollTitle:"連続表示 (P)", a5Title:"A5 ページ (P)", smaller:"文字を小さく (−)", larger:"文字を大きく (+)",
+    style:"スタイル", language:"言語", theme:"ライト / ダーク (D)", print:"印刷 / PDF として保存",
+    styles:{ book:"書籍", academic:"学術", editorial:"エディトリアル", concrete:"コンクリート", modern:"モダン" },
+    needFolder:"章を読むには、このファイルだけでなくフォルダごと開いてください（フォルダボタン）。",
+    noChapters:"このページの隣に章のファイルが見つかりませんでした。1.md、01.md、a.md（または .txt）という名前にするか、1/text.md のように番号付きフォルダに入れてください。",
+    imgMissing:"画像が見つかりません：", fileMissing:"ファイルが見つかりません：", untitled:"無題",
+  },
+};
+/* The reader's language: their choice in the menu, else the browser's main language, else English */
+const browserLang = () => { const k = String((navigator.languages || [])[0] || navigator.language || "").toLowerCase().split("-")[0]; return UI[k] ? k : "en"; };
+const uiLang = () => (UI[st.ui] ? st.ui : browserLang());
+const T = () => UI[uiLang()];
+
+function applyUI(){
+  const t = T(), ui = uiLang();
+  const title = (sel, v) => { const e = $(sel); e.title = v; if (e.hasAttribute("aria-label")) e.setAttribute("aria-label", v.replace(/\s*[(（].*$/, "")); };
+  const text = (sel, v) => { $(sel).textContent = v; };
+  [$("#bar"), $("#welcome"), $("#pastePanel"), $("#styleMenu"), $("#langMenu"), $("#loading")].forEach(e => e.lang = ui);
+  // toolbar
+  title("#openBtn", t.openTitle); text("#openBtn span", t.open);
+  title("#folderBtn", t.folderTitle); title("#pasteOpenBtn", t.pasteTitle); title("#tocBtn", t.contentsTitle);
+  title("#modeScroll", t.scrollTitle); text("#modeScroll span", t.scroll); title("#modeA5", t.a5Title);
+  title("#smaller", t.smaller); title("#bigger", t.larger);
+  title("#styleBtn", t.style + ": " + styleName(root.dataset.style || DEFAULT_STYLE) + " (S)");
+  title("#langBtn", t.language + ": " + WORDS[ui].name + " (L)"); $("#langBtn").innerHTML = '<span class="sc">' + ui + '</span>';
+  title("#themeBtn", t.theme); title("#printBtn", t.print);
+  $("#pasteBox2").placeholder = t.pastePanel; text("#pasteBtn2", t.readThis); $("#pasteBtn2").title = t.readThisTitle;
+  // opening screen
+  text("#welcome h1", t.openStory); text("#welcome > p:not(.msg)", t.dropHint);
+  text("#welcomeOpen", t.chooseFile); text("#welcomeFolder", t.openFolder); text("#sampleBtn", t.sample);
+  $("#pasteBox").placeholder = t.pasteHere; text("#pasteBtn", t.readThis); $("#pasteBtn").title = t.readThisTitle;
+  $("#welcomeTip").innerHTML = esc(t.tip).replace("{text}", "<code>text.md</code>").replace("{content}", "<code>content.md</code>");
+  $("#welcomeLangs").setAttribute("aria-label", t.language);
+  $("#welcomeLangs").replaceChildren(...langButtons());
+  text("#loading", t.opening);
+  document.body.dataset.drop = t.dropToRead;
+}
+const styleName = k => (T().styles && T().styles[k]) || (STYLES[k] && STYLES[k].label) || k;
+function langButtons(){
+  return Object.entries(WORDS).map(([k, w]) => {
+    const b = el("button"); b.textContent = w.name; b.lang = k; b.setAttribute("role", "menuitemradio");
+    b.setAttribute("aria-pressed", k === uiLang()); b.onclick = () => setUiLang(k); return b;
+  });
+}
+function setUiLang(k){
+  $("#langMenu").hidden = true;
+  if (k === uiLang()) return;
+  st.ui = k; saveSettings();
+  applyUI(); render(true);
+}
+
 
 const $ = s => document.querySelector(s);
 const root = document.documentElement;
@@ -550,7 +753,7 @@ const store = {
   set(k,v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch{} },
   del(k){ try{ localStorage.removeItem(k); }catch{} }
 };
-const st = Object.assign({ mode:"scroll", size:DEFAULT_SIZE, theme:null, style:null }, store.get("reader.settings") || {});
+const st = Object.assign({ mode:"scroll", size:DEFAULT_SIZE, theme:null, style:null, ui:null }, store.get("reader.settings") || {});
 st.size = Math.max(0, Math.min(SIZES_PX.length-1, st.size|0));
 const saveSettings = () => store.set("reader.settings", st);
 
@@ -681,14 +884,40 @@ function smarten(node){
   let t; while ((t = w.nextNode())) t.nodeValue = smartStr(t.nodeValue);
 }
 const plainHtml = s => esc(smartStr(String(s).trim()));
-function detectLang(text){
-  const sample = " "+text.slice(0,8000).toLowerCase()+" ";
-  const count = re => (sample.match(re)||[]).length;
-  const es = count(/\s(el|la|los|las|que|de|y|en|un|una|por|con|para|es|se|no|del|lo)\s/g);
-  const en = count(/\s(the|and|of|to|is|that|in|it|you|was|he|she|for|with|on)\s/g);
-  return es > en ? "es" : "en";
+/* Which language a text is in. Scripts decide Chinese, Japanese, Hindi and Russian;
+   common words decide between Spanish, English and other Latin-alphabet languages.
+   Anything else, or nothing clear, is English. */
+const LATIN_WORDS = {
+  en: "the and of to is that it you was he she for with on his her this have but",
+  es: "el los las y del por para con una es lo pero como muy más su sus también",
+  fr: "le les et des est une du je il qui dans pas ne au sur avec cette sont",
+  pt: "os não uma com em do da ao ele ela mas você são também isso foi pelo",
+  it: "il di che è non per gli della sono ma anche questo nel alla ho mi",
+  de: "der die und das ist nicht ich zu den mit sie ein eine auch auf dem",
+};
+const LATIN_SETS = Object.fromEntries(Object.entries(LATIN_WORDS).map(([k, w]) => [k, new Set(w.split(" "))]));
+/* Main alphabet of a text: "zh", "ja", "hi" (Devanagari), "ru" (Cyrillic), "latin" or null */
+function detectScript(text){
+  const s = String(text || "").slice(0, 12000);
+  const n = re => (s.match(re) || []).length;
+  const kana = n(/[\u3040-\u30ff]/g), han = n(/\p{Script=Han}/gu), dev = n(/\p{Script=Devanagari}/gu),
+        cyr = n(/\p{Script=Cyrillic}/gu), lat = n(/\p{Script=Latin}/gu);
+  const top = Math.max(kana + han, dev, cyr, lat);
+  if (!top) return null;
+  if (top === kana + han) return kana > top * 0.1 ? "ja" : "zh";
+  return top === dev ? "hi" : top === cyr ? "ru" : "latin";
 }
-const words = lang => WORDS[lang] || WORDS.en;
+function detectLang(text){
+  const script = detectScript(text);
+  if (!script) return "en";
+  if (script === "ru") return (String(text).slice(0, 12000).match(/[іїєґўђјљњћџ]/gi) || []).length > 2 ? "en" : "ru";   // Ukrainian, Serbian…: not Russian
+  if (script !== "latin") return script;
+  const s = String(text).slice(0, 12000);
+  const score = Object.fromEntries(Object.keys(LATIN_SETS).map(k => [k, 0]));
+  for (const w of s.toLowerCase().match(/\p{L}+/gu) || []) for (const k in LATIN_SETS) if (LATIN_SETS[k].has(w)) score[k]++;
+  const best = Object.keys(score).reduce((a, b) => score[b] > score[a] ? b : a, "en");
+  return best === "es" ? "es" : "en";
+}const words = lang => WORDS[lang] || WORDS.en;
 
 function frontMatter(text){
   const meta = {};
@@ -721,7 +950,7 @@ function parseDoc(raw, name, o = {}){
     const f = first(), t = f.textContent.trim();
     if (f.tagName === "H1" || (o.firstLineTitle && /^H[2-6]$/.test(f.tagName))){ title = take().innerHTML; from = "doc"; }
     else if (f.tagName === "P"){
-      const looksTitle = t.length <= 90 && !/[.!?…:;,]$/.test(t) && frag.children.length > 1;
+      const looksTitle = t.length <= 90 && !/[.!?…:;,。！？：；，、]$/.test(t) && frag.children.length > 1;
       if ((isTxt && looksTitle) || (o.firstLineTitle && t.length <= 120)){ title = take().innerHTML; from = "doc"; }
     }
   }
@@ -742,7 +971,7 @@ function parseDoc(raw, name, o = {}){
     }
     title = plainHtml(o.forcedTitle);
   }
-  if (!title) title = esc(o.fallbackTitle || prettyName(name) || "Untitled");
+  if (!title) title = esc(o.fallbackTitle || prettyName(name) || T().untitled);
   return { title, subtitle, author, titleText: textOf(title), frag, style: meta.style, text };
 }
 
@@ -953,9 +1182,7 @@ async function loadBook(src, contents, titleFile, found){
   ]);
   let notice = null;
   if (!chapters.some(c => !c.missing)){
-    notice = src.kind === "files"
-      ? "To read the chapters, open the whole folder (folder button), not just this file."
-      : "No chapter files were found next to this page. Name them 1.md, 01.md or a.md (or .txt), or put each in a numbered folder as 1/text.md.";
+    notice = src.kind === "files" ? "needFolder" : "noChapters";   // translated when shown
   }
   doc = { kind:"book", meta, cover, chapters, notice, fallbackTitle: src.name };
   store.del("reader.doc");
@@ -973,7 +1200,7 @@ function applyImages(frag, map){
       fig.prepend(img);
       if (isA5Shape(r)) fig.classList.add("fullpage");
     } else {
-      const m = el("p", "missing"); m.textContent = "Image not found: " + fig.dataset.src; fig.replaceWith(m);
+      const m = el("p", "missing"); m.textContent = T().imgMissing + fig.dataset.src; fig.replaceWith(m);
     }
   });
   splitBreaks(frag);
@@ -1004,26 +1231,30 @@ function addFin(frag){ if (frag.children.length) frag.append(el("p", "fin")); }
 
 function buildModel(){
   if (doc.kind === "single"){
-    const p = parseDoc(doc.text, doc.name);
+    // Pasted text has no file name: a short first line becomes the title instead.
+    const p = parseDoc(doc.text, doc.name, doc.name === "pasted.md" ? { firstLineTitle: true, fallbackTitle: T().untitled } : {});
     applyImages(p.frag, doc.images); markDropcap(p.frag); addFin(p.frag);
-    return { kind:"single", lang: detectLang(p.text), cover: doc.cover, style: p.style,
+    doc.detected = detectLang(p.text);
+    return { kind:"single", lang: doc.detected, sample: p.text, cover: doc.cover, style: p.style,
              meta: { title:p.title, subtitle:p.subtitle, author:p.author, titleText:p.titleText }, frag: p.frag };
   }
-  const lang = detectLang(doc.chapters.map(c => c.text || "").join(" ").slice(0, 8000) + " " + (doc.meta.title || ""));
+  const allText = doc.chapters.map(c => c.text || "").join(" ") + " " + (doc.meta.title || "");
+  doc.detected = detectLang(allText);
+  const lang = doc.detected;
   const W = words(lang);
   const chapters = doc.chapters.map(c => {
     if (c.missing){
-      const title = c.name ? plainHtml(c.name) : esc(W.chapter + " " + c.label);
+      const title = c.name ? plainHtml(c.name) : esc(W.chapter(c.label));
       return { ...c, title, titleText: textOf(title) };
     }
-    const p = parseDoc(c.text, c.path, { forcedTitle: c.name, firstLineTitle: !c.name, fallbackTitle: W.chapter + " " + c.label });
+    const p = parseDoc(c.text, c.path, { forcedTitle: c.name, firstLineTitle: !c.name, fallbackTitle: W.chapter(c.label) });
     applyImages(p.frag, c.images); markDropcap(p.frag);
     return { ...c, title: p.title, titleText: p.titleText, subtitle: p.subtitle, author: p.author, frag: p.frag };
   });
   const last = [...chapters].reverse().find(c => !c.missing);
   if (last) addFin(last.frag);
-  const title = doc.meta.title ? plainHtml(doc.meta.title) : esc(doc.fallbackTitle || "Untitled");
-  return { kind:"book", lang, W, cover: doc.cover, style: doc.meta.style, chapters, notice: doc.notice,
+  const title = doc.meta.title ? plainHtml(doc.meta.title) : esc(doc.fallbackTitle || T().untitled);
+  return { kind:"book", lang, W, sample: allText, cover: doc.cover, style: doc.meta.style, chapters, notice: doc.notice && T()[doc.notice],
            meta: { title, titleText: textOf(title),
                    subtitle: doc.meta.subtitle ? plainHtml(doc.meta.subtitle) : null,
                    author: doc.meta.author ? plainHtml(doc.meta.author) : null } };
@@ -1058,7 +1289,7 @@ function tocItems(m){
       + `<span class="toc-title">${c.title}${c.missing ? ` <em class="toc-note">(${esc(m.W.missing)})</em>` : ""}</span>`
       + `<span class="toc-dots"></span><span class="toc-page" data-for="${c.id}">${c.missing ? "" : "000"}</span>`;
     d.innerHTML = c.missing
-      ? `<span class="toc-row" title="File not found: ${esc(c.tried || "")}">${inner}</span>`
+      ? `<span class="toc-row" title="${esc(T().fileMissing + (c.tried || ""))}">${inner}</span>`
       : `<a class="toc-row" href="#${c.id}">${inner}</a>`;
     return d;
   });
@@ -1097,8 +1328,12 @@ function breakpoints(e){
   const pts = []; const isPre = e.tagName === "PRE";
   const w = document.createTreeWalker(e, NodeFilter.SHOW_TEXT); let t;
   while ((t = w.nextNode())){
-    const re = isPre ? /\n/g : /\s+/g; let m;
-    while ((m = re.exec(t.nodeValue))) pts.push({ node:t, offset:m.index + m[0].length });
+    // Spaces, or (for Chinese and Japanese) after any character that may end a line
+    const re = isPre ? /\n/g : /\s+|[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}\u3000-\u303f\uff01-\uff60ー](?![、。，．！？；：）」』】〉》ー…・\uff09\uff0c\uff0e\uff01\uff1f\uff1a\uff1b])/gu; let m;
+    while ((m = re.exec(t.nodeValue))){
+      if (/^[「『（【〈《\uff08]$/.test(m[0])) continue;   // never end a line on an opening bracket
+      pts.push({ node:t, offset:m.index + m[0].length });
+    }
   }
   return pts;
 }
@@ -1257,6 +1492,41 @@ function scaleToFit(){
   root.style.setProperty("--s", Math.min(1, (window.innerWidth - 24) / pageW).toFixed(4));
 }
 
+/* The language of the text being read (typography, hyphenation, book words) */
+function setLang(lang){ root.dataset.lang = lang; root.lang = lang; }
+/* Adds the script's font to every font token of the current style, just before the
+   generic family, so Latin letters keep the style's own font. */
+const FONT_TOKENS = ["--font-body","--font-display","--font-label","--font-ui","--dropcap-font"];
+const GENERIC = /^(serif|sans-serif|monospace|system-ui|ui-monospace|-apple-system|"?Segoe UI"?|Menlo|Consolas)$/i;
+const scriptJobs = {};
+let fontSeq = 0;
+async function scriptFonts(keys, sample){
+  const job = ++fontSeq;
+  const fonts = [...new Set(keys)].filter(k => SCRIPT_FONTS[k]).map(k => [k, SCRIPT_FONTS[k]]);
+  await Promise.all(fonts.map(([k, f]) => scriptJobs[k] || (scriptJobs[k] = new Promise(r => {
+    const l = document.createElement("link"); l.rel = "stylesheet";
+    l.href = GF + [f.serif, f.sans].map(n => "family=" + n.replace(/ /g, "+") + f.spec).join("&") + "&display=swap";
+    l.onload = r; l.onerror = r; setTimeout(r, 3000);
+    document.head.append(l);
+  }))));
+  if (job !== fontSeq) return;
+  FONT_TOKENS.forEach(t => root.style.removeProperty(t));
+  if (!fonts.length) return;
+  const cs = getComputedStyle(root);
+  const lists = FONT_TOKENS.map(t => cs.getPropertyValue(t).split(",").map(x => x.trim()).filter(Boolean));
+  lists.forEach((list, i) => {
+    const sans = list.some(x => /sans-serif|monospace|system-ui/i.test(x));
+    const g = list.findIndex(x => GENERIC.test(x));
+    list.splice(g < 0 ? list.length : g, 0, ...fonts.map(([, f]) => '"' + (sans ? f.sans : f.serif) + '"'));
+    root.style.setProperty(FONT_TOKENS[i], list.join(","));
+  });
+  if (document.fonts){
+    const text = String(sample || "").slice(0, 30000);
+    await Promise.race([Promise.all(fonts.flatMap(([, f]) => [f.serif, f.sans]).flatMap(n => [400, 600].map(w =>
+      document.fonts.load(w + ' 16px "' + n + '"', text).catch(() => {})))), sleep(4000)]);
+  }
+}
+
 let renderSeq = 0;
 async function render(keepPlace){
   const seq = ++renderSeq;
@@ -1272,7 +1542,8 @@ async function render(keepPlace){
   $("#loading").hidden = true;
 
   if (!doc){
-    root.dataset.style = pickStyle(null); loadStyle(root.dataset.style);
+    root.dataset.style = pickStyle(null); loadStyle(root.dataset.style); setLang(uiLang()); applyUI();
+    scriptFonts([uiLang()], $("#welcome").textContent);
     $("#welcome").hidden = false; $("#bar").hidden = true; $("#column").hidden = true; $("#pages").hidden = true;
     document.title = "TXTworm"; return;
   }
@@ -1280,9 +1551,13 @@ async function render(keepPlace){
   const m = buildModel();
   $("#tocBtn").hidden = m.kind !== "book";
   root.dataset.style = pickStyle(m.style);
-  $("#styleBtn").title = "Style: " + STYLES[root.dataset.style].label + " (S)";
+  applyUI();
   document.title = m.meta.titleText;
+  setLang(m.lang);
   await loadStyle(root.dataset.style);
+  if (seq !== renderSeq) return;
+  // fonts follow the text's alphabet, plus the interface language's
+  await scriptFonts([detectScript(m.sample), uiLang()], m.sample + " " + $("#bar").textContent);
   if (seq !== renderSeq) return;
 
   if (st.mode === "scroll"){
@@ -1309,7 +1584,7 @@ async function openEntries(entries, name){
   history.replaceState(null, "", location.pathname + location.search);
   const ok = await openSource(src);
   if (ok){ source = src; render(false); }
-  else { $("#loading").hidden = true; showMsg("No .txt or .md files were found there."); }
+  else { $("#loading").hidden = true; showMsg(T().noFiles); }
 }
 function showMsg(t){ const m = $("#welcomeMsg"); m.textContent = t; m.hidden = !t; if (!doc) render(false); }
 
@@ -1369,13 +1644,18 @@ const nextStyle = () => {
 const toggleStyleMenu = () => {
   const m = $("#styleMenu");
   if (!m.hidden){ m.hidden = true; return; }
+  $("#pastePanel").hidden = true; $("#langMenu").hidden = true;
   m.replaceChildren(...Object.entries(STYLES).map(([k, s]) => {
-    const b = el("button"); b.textContent = s.label; b.setAttribute("role", "menuitemradio");
+    const b = el("button"); b.textContent = styleName(k); b.setAttribute("role", "menuitemradio");
     b.setAttribute("aria-pressed", k === root.dataset.style); b.onclick = () => setStyle(k); return b;
   }));
   m.hidden = false;
 };
-document.addEventListener("click", e => { if (!e.target.closest("#styleMenu,#styleBtn")) $("#styleMenu").hidden = true; });
+document.addEventListener("click", e => {
+  if (!e.target.closest("#styleMenu,#styleBtn")) $("#styleMenu").hidden = true;
+  if (!e.target.closest("#langMenu,#langBtn")) $("#langMenu").hidden = true;
+  if (!e.target.closest("#pastePanel,#pasteOpenBtn")) $("#pastePanel").hidden = true;
+});
 const goToc = () => { const t = document.getElementById("toc"); if (t) t.scrollIntoView({ behavior:"smooth" }); };
 
 $("#openBtn").onclick = openPicker;
@@ -1390,8 +1670,45 @@ $("#smaller").onclick = () => resize(-1);
 $("#bigger").onclick = () => resize(1);
 $("#themeBtn").onclick = toggleTheme;
 $("#styleBtn").onclick = toggleStyleMenu;
+const toggleLangMenu = () => {
+  const m = $("#langMenu");
+  if (!m.hidden){ m.hidden = true; return; }
+  $("#styleMenu").hidden = true; $("#pastePanel").hidden = true;
+  m.replaceChildren(...langButtons());
+  m.hidden = false;
+};
+$("#langBtn").onclick = toggleLangMenu;
 $("#tocBtn").onclick = goToc;
 $("#printBtn").onclick = () => window.print();
+/* Two paste boxes: one on the welcome screen, one in the panel under the toolbar */
+function pasteBox(box, btn){
+  const read = async () => {
+    const text = box.value;
+    if (!text.trim()) return;
+    if (source && source.close) source.close();
+    source = memorySource();
+    await loadSingle(source, { text, name: "pasted.md" });
+    box.value = ""; btn.disabled = true; $("#pastePanel").hidden = true;
+    history.replaceState(null, "", location.pathname + location.search);
+    render(false);
+  };
+  box.oninput = () => { btn.disabled = !box.value.trim(); };
+  box.onkeydown = e => {
+    if (e.key === "Enter" && (e.ctrlKey || e.metaKey)){ e.preventDefault(); read(); }
+    else if (e.key === "Escape") $("#pastePanel").hidden = true;
+  };
+  btn.onclick = read;
+}
+pasteBox($("#pasteBox"), $("#pasteBtn"));
+pasteBox($("#pasteBox2"), $("#pasteBtn2"));
+const togglePastePanel = () => {
+  const p = $("#pastePanel");
+  $("#styleMenu").hidden = true;
+  $("#langMenu").hidden = true;
+  p.hidden = !p.hidden;
+  if (!p.hidden) $("#pasteBox2").focus();
+};
+$("#pasteOpenBtn").onclick = togglePastePanel;
 $("#sampleBtn").onclick = async () => { source = memorySource(); await loadSingle(source, { text: SAMPLE, name: "sample.md" }); render(false); };
 
 document.addEventListener("keydown", e => {
@@ -1404,13 +1721,16 @@ document.addEventListener("keydown", e => {
   else if (k === "o") openPicker();
   else if (k === "c" && doc && doc.kind === "book") goToc();
   else if (k === "s") nextStyle();
+  else if (k === "l" && doc) toggleLangMenu();
 });
 
 let dragDepth = 0;
-addEventListener("dragenter", e => { e.preventDefault(); dragDepth++; document.body.classList.add("drop"); });
+const hasFiles = e => [...(e.dataTransfer?.types || [])].includes("Files");
+addEventListener("dragenter", e => { if (!hasFiles(e)) return; e.preventDefault(); dragDepth++; document.body.classList.add("drop"); });
 addEventListener("dragleave", () => { if (--dragDepth <= 0){ dragDepth = 0; document.body.classList.remove("drop"); } });
 addEventListener("dragover", e => e.preventDefault());
 addEventListener("drop", async e => {
+  if (!hasFiles(e)) return;
   e.preventDefault(); dragDepth = 0; document.body.classList.remove("drop");
   const r = await entriesFromDrop(e.dataTransfer); openEntries(r.entries, r.name);
 });
@@ -1457,6 +1777,7 @@ The council lost that recommendation in a drawer as well. But on the first page 
 
 /* ---------- Boot ---------- */
 applyTheme();
+applyUI();
 (async function boot(){
   const params = new URLSearchParams(location.search);
   const src = webSource();

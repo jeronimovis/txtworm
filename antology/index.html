@@ -778,7 +778,9 @@ function inline(s){
   s = s.replace(/`([^`]+)`/g, (_,c) => { codes.push(c); return "\u0000"+(codes.length-1)+"\u0000"; });
   s = esc(s);
   s = s.replace(/!\[([^\]]*)\]\(([^)\s]+)(?:\s+&quot;.*?&quot;)?\)/g, '<img alt="$1" data-src="$2">');
-  s = s.replace(/\[([^\]]+)\]\(([^)\s]+)(?:\s+&quot;.*?&quot;)?\)/g, '<a href="$2">$1</a>');
+  // Links may only go to web pages, e-mail addresses or files next to the page (never javascript: or data:)
+  s = s.replace(/\[([^\]]+)\]\(([^)\s]+)(?:\s+&quot;.*?&quot;)?\)/g, (_, t, u) =>
+    /^[a-z][a-z0-9+.-]*:/i.test(u) && !/^(https?|mailto):/i.test(u) ? t : `<a href="${u}">${t}</a>`);
   s = s.replace(/(\*\*|__)(?=\S)([\s\S]*?\S)\1/g, "<strong>$2</strong>");
   s = s.replace(/\*(?=\S)([\s\S]*?\S)\*/g, "<em>$1</em>");
   s = s.replace(/(^|[^\w])_(?=\S)([\s\S]*?\S)_(?!\w)/g, "$1<em>$2</em>");
@@ -1782,7 +1784,10 @@ applyUI();
   const params = new URLSearchParams(location.search);
   const src = webSource();
   let ok = false;
-  try { ok = await openSource(src, { file: params.get("file") }); } catch {}
+  // ?file= may only name a file on this site, next to the page or below it
+  let file = params.get("file");
+  if (file && (/^[\/\\]|\/\/|\\|:/.test(file) || file.split("/").includes(".."))) file = null;
+  try { ok = await openSource(src, { file }); } catch {}
   if (ok) source = src;
   else {
     const saved = store.get("reader.doc");

@@ -464,18 +464,6 @@ a.toc-row:hover .toc-title{color:var(--accent)}
   font-weight:600;font-size:calc(var(--fsA5) * .6)}
 :root[data-style=modern] .prose .fin{font-size:.6em}
 
-/* =====================================================================
-   LANGUAGES
-   Set by the script on <html data-lang=…>. Fonts for Chinese, Japanese,
-   Hindi and Russian are added to each style's fonts by the script.
-   ===================================================================== */
-/* No drop cap where it doesn't belong: the first paragraph simply starts flush */
-:root:is([data-lang=zh],[data-lang=ja],[data-lang=hi]) .prose p.dropcap::first-letter{float:none;font:inherit;color:inherit;
-  margin:0;padding:0;line-height:inherit;background:none}
-:root:is([data-lang=zh],[data-lang=ja],[data-lang=hi]) .prose p.dropcap::first-line{font-variant-caps:normal;letter-spacing:normal}
-/* Chinese and Japanese paragraphs are indented by two characters */
-:root:is([data-lang=zh],[data-lang=ja]):not([data-style=concrete],[data-style=modern]){--indent:2em}
-:root:is([data-lang=zh],[data-lang=ja]) .prose{font-feature-settings:"kern"}
 </style>
 </head>
 <body>
@@ -589,25 +577,13 @@ const STYLE_ALIASES = { classic: "book" };   // older names still work
 const WORDS = {
   en: { name:"English", contents:"Contents",   chapter: n => "Chapter " + n,  missing:"missing" },
   es: { name:"Español", contents:"Índice",     chapter: n => "Capítulo " + n, missing:"falta" },
-  zh: { name:"中文",     contents:"目录",        chapter: n => "第" + n + "章",  missing:"缺失" },
-  hi: { name:"हिन्दी",    contents:"विषय सूची",   chapter: n => "अध्याय " + n,   missing:"अनुपलब्ध" },
-  ru: { name:"Русский", contents:"Содержание", chapter: n => "Глава " + n,    missing:"нет файла" },
-  ja: { name:"日本語",   contents:"目次",        chapter: n => "第" + n + "章",  missing:"見つかりません" },
-};
-/* Fonts added for each script (a serif and a sans, matched to the style).
-   Google Fonts sends only the characters a page uses. */
-const SCRIPT_FONTS = {
-  zh: { serif:"Noto Serif SC", sans:"Noto Sans SC", spec:":wght@400;600;700" },
-  ja: { serif:"Noto Serif JP", sans:"Noto Sans JP", spec:":wght@400;600;700" },
-  hi: { serif:"Noto Serif Devanagari", sans:"Noto Sans Devanagari", spec:":wght@400;600;700" },
-  ru: { serif:"Noto Serif", sans:"Noto Sans", spec:":ital,wght@0,400;0,600;0,700;1,400" },
 };
 
 /* =====================================================================
    INTERFACE LANGUAGES
    Menus, buttons and the opening screen follow the reader's browser
-   language (or the choice in the language menu). Anything other than
-   these six is shown in English. The words inside a book ("Contents",
+   language (or the choice in the language menu): Spanish, or English
+   for any other language. The words inside a book ("Contents",
    "Chapter 3") follow the language of the text instead (WORDS above).
    ===================================================================== */
 const UI = {
@@ -638,62 +614,6 @@ const UI = {
     needFolder:"Para leer los capítulos, abre la carpeta entera (botón de carpeta), no solo este archivo.",
     noChapters:"No se encontraron capítulos junto a esta página. Nómbralos 1.md, 01.md o a.md (o .txt), o pon cada uno en una carpeta numerada, como 1/text.md.",
     imgMissing:"Imagen no encontrada: ", fileMissing:"Archivo no encontrado: ", untitled:"Sin título",
-  },
-  zh: {
-    openStory:"打开一个故事", dropHint:"将 .md 或 .txt 文件，或整个文件夹，拖放到本页任意位置。",
-    chooseFile:"选择文件", openFolder:"打开文件夹", sample:"阅读示例",
-    pasteHere:"……或在此粘贴文本", pastePanel:"在此粘贴文本", readThis:"阅读此文本", readThisTitle:"阅读粘贴的文本（Ctrl+Enter）",
-    tip:"提示：在你的网站上把 {text} 放在本页旁边，或放一个含有编号章节的 {content}，页面就会自动打开。",
-    noFiles:"那里没有找到 .txt 或 .md 文件。", opening:"正在打开…", dropToRead:"松开即可阅读",
-    open:"打开", openTitle:"打开 .md 或 .txt 文件 (O)", folderTitle:"打开文件夹", pasteTitle:"粘贴文本", contentsTitle:"目录 (C)",
-    scroll:"滚动", scrollTitle:"连续文本 (P)", a5Title:"A5 页面 (P)", smaller:"缩小文字 (−)", larger:"放大文字 (+)",
-    style:"样式", language:"语言", theme:"浅色 / 深色 (D)", print:"打印 / 存为 PDF",
-    styles:{ book:"书籍", academic:"学术", editorial:"杂志", concrete:"混凝土", modern:"现代" },
-    needFolder:"要阅读各章，请打开整个文件夹（文件夹按钮），而不只是这个文件。",
-    noChapters:"本页旁边没有找到章节文件。请将它们命名为 1.md、01.md 或 a.md（或 .txt），或把每章放进编号文件夹，如 1/text.md。",
-    imgMissing:"未找到图片：", fileMissing:"未找到文件：", untitled:"无标题",
-  },
-  hi: {
-    openStory:"कहानी खोलें", dropHint:"इस पेज पर कहीं भी .md या .txt फ़ाइल, या पूरा फ़ोल्डर, छोड़ें।",
-    chooseFile:"फ़ाइल चुनें", openFolder:"फ़ोल्डर खोलें", sample:"नमूना पढ़ें",
-    pasteHere:"…या अपना पाठ यहाँ चिपकाएँ", pastePanel:"अपना पाठ यहाँ चिपकाएँ", readThis:"यह पाठ पढ़ें", readThisTitle:"चिपकाया गया पाठ पढ़ें (Ctrl+Enter)",
-    tip:"सुझाव: अपनी साइट पर इस पेज के पास {text} रखें, या क्रमांकित अध्यायों वाली {content} रखें, और यह अपने आप खुल जाएगा।",
-    noFiles:"वहाँ कोई .txt या .md फ़ाइल नहीं मिली।", opening:"खुल रहा है…", dropToRead:"पढ़ने के लिए छोड़ें",
-    open:"खोलें", openTitle:".md या .txt फ़ाइल खोलें (O)", folderTitle:"फ़ोल्डर खोलें", pasteTitle:"पाठ चिपकाएँ", contentsTitle:"विषय सूची (C)",
-    scroll:"स्क्रॉल", scrollTitle:"लगातार पाठ (P)", a5Title:"A5 पेज (P)", smaller:"पाठ छोटा करें (−)", larger:"पाठ बड़ा करें (+)",
-    style:"शैली", language:"भाषा", theme:"हल्का / गहरा (D)", print:"प्रिंट / PDF के रूप में सहेजें",
-    styles:{ book:"पुस्तक", academic:"शैक्षणिक", editorial:"संपादकीय", concrete:"कंक्रीट", modern:"आधुनिक" },
-    needFolder:"अध्याय पढ़ने के लिए केवल यह फ़ाइल नहीं, पूरा फ़ोल्डर खोलें (फ़ोल्डर बटन)।",
-    noChapters:"इस पेज के पास कोई अध्याय फ़ाइल नहीं मिली। उनके नाम 1.md, 01.md या a.md (या .txt) रखें, या हर अध्याय को 1/text.md जैसे क्रमांकित फ़ोल्डर में रखें।",
-    imgMissing:"छवि नहीं मिली: ", fileMissing:"फ़ाइल नहीं मिली: ", untitled:"शीर्षक रहित",
-  },
-  ru: {
-    openStory:"Открыть рассказ", dropHint:"Перетащите файл .md или .txt — или целую папку — в любое место страницы.",
-    chooseFile:"Выбрать файл", openFolder:"Открыть папку", sample:"Прочитать пример",
-    pasteHere:"…или вставьте текст сюда", pastePanel:"Вставьте текст сюда", readThis:"Читать этот текст", readThisTitle:"Читать вставленный текст (Ctrl+Enter)",
-    tip:"Совет: положите {text} рядом с этой страницей на сайте или {content} с пронумерованными главами — и текст откроется сам.",
-    noFiles:"Там не найдено файлов .txt или .md.", opening:"Открытие…", dropToRead:"Отпустите, чтобы читать",
-    open:"Открыть", openTitle:"Открыть файл .md или .txt (O)", folderTitle:"Открыть папку", pasteTitle:"Вставить текст", contentsTitle:"Содержание (C)",
-    scroll:"лента", scrollTitle:"Сплошной текст (P)", a5Title:"Страницы A5 (P)", smaller:"Уменьшить текст (−)", larger:"Увеличить текст (+)",
-    style:"Стиль", language:"Язык", theme:"Светлая / тёмная тема (D)", print:"Печать / сохранить в PDF",
-    styles:{ book:"Книга", academic:"Академический", editorial:"Журнальный", concrete:"Бетон", modern:"Современный" },
-    needFolder:"Чтобы читать главы, откройте всю папку (кнопка папки), а не только этот файл.",
-    noChapters:"Рядом с этой страницей не найдены файлы глав. Назовите их 1.md, 01.md или a.md (или .txt) либо положите каждую главу в пронумерованную папку, например 1/text.md.",
-    imgMissing:"Изображение не найдено: ", fileMissing:"Файл не найден: ", untitled:"Без названия",
-  },
-  ja: {
-    openStory:"物語を開く", dropHint:".md または .txt ファイル、またはフォルダごと、このページのどこにでもドロップしてください。",
-    chooseFile:"ファイルを選ぶ", openFolder:"フォルダを開く", sample:"サンプルを読む",
-    pasteHere:"…またはここにテキストを貼り付け", pastePanel:"ここにテキストを貼り付け", readThis:"このテキストを読む", readThisTitle:"貼り付けたテキストを読む（Ctrl+Enter）",
-    tip:"ヒント：サイト上でこのページの隣に {text} を置くか、番号付きの章を含む {content} を置くと、自動で開きます。",
-    noFiles:"そこには .txt や .md ファイルが見つかりませんでした。", opening:"開いています…", dropToRead:"ドロップして読む",
-    open:"開く", openTitle:".md または .txt ファイルを開く (O)", folderTitle:"フォルダを開く", pasteTitle:"テキストを貼り付け", contentsTitle:"目次 (C)",
-    scroll:"スクロール", scrollTitle:"連続表示 (P)", a5Title:"A5 ページ (P)", smaller:"文字を小さく (−)", larger:"文字を大きく (+)",
-    style:"スタイル", language:"言語", theme:"ライト / ダーク (D)", print:"印刷 / PDF として保存",
-    styles:{ book:"書籍", academic:"学術", editorial:"エディトリアル", concrete:"コンクリート", modern:"モダン" },
-    needFolder:"章を読むには、このファイルだけでなくフォルダごと開いてください（フォルダボタン）。",
-    noChapters:"このページの隣に章のファイルが見つかりませんでした。1.md、01.md、a.md（または .txt）という名前にするか、1/text.md のように番号付きフォルダに入れてください。",
-    imgMissing:"画像が見つかりません：", fileMissing:"ファイルが見つかりません：", untitled:"無題",
   },
 };
 /* The reader's language: their choice in the menu, else the browser's main language, else English */
@@ -886,9 +806,8 @@ function smarten(node){
   let t; while ((t = w.nextNode())) t.nodeValue = smartStr(t.nodeValue);
 }
 const plainHtml = s => esc(smartStr(String(s).trim()));
-/* Which language a text is in. Scripts decide Chinese, Japanese, Hindi and Russian;
-   common words decide between Spanish, English and other Latin-alphabet languages.
-   Anything else, or nothing clear, is English. */
+/* Which language a text is in: common words decide between Spanish, English and
+   other languages (French, Portuguese, Italian, German). Anything but Spanish is English. */
 const LATIN_WORDS = {
   en: "the and of to is that it you was he she for with on his her this have but",
   es: "el los las y del por para con una es lo pero como muy más su sus también",
@@ -898,28 +817,14 @@ const LATIN_WORDS = {
   de: "der die und das ist nicht ich zu den mit sie ein eine auch auf dem",
 };
 const LATIN_SETS = Object.fromEntries(Object.entries(LATIN_WORDS).map(([k, w]) => [k, new Set(w.split(" "))]));
-/* Main alphabet of a text: "zh", "ja", "hi" (Devanagari), "ru" (Cyrillic), "latin" or null */
-function detectScript(text){
-  const s = String(text || "").slice(0, 12000);
-  const n = re => (s.match(re) || []).length;
-  const kana = n(/[\u3040-\u30ff]/g), han = n(/\p{Script=Han}/gu), dev = n(/\p{Script=Devanagari}/gu),
-        cyr = n(/\p{Script=Cyrillic}/gu), lat = n(/\p{Script=Latin}/gu);
-  const top = Math.max(kana + han, dev, cyr, lat);
-  if (!top) return null;
-  if (top === kana + han) return kana > top * 0.1 ? "ja" : "zh";
-  return top === dev ? "hi" : top === cyr ? "ru" : "latin";
-}
 function detectLang(text){
-  const script = detectScript(text);
-  if (!script) return "en";
-  if (script === "ru") return (String(text).slice(0, 12000).match(/[іїєґўђјљњћџ]/gi) || []).length > 2 ? "en" : "ru";   // Ukrainian, Serbian…: not Russian
-  if (script !== "latin") return script;
-  const s = String(text).slice(0, 12000);
   const score = Object.fromEntries(Object.keys(LATIN_SETS).map(k => [k, 0]));
-  for (const w of s.toLowerCase().match(/\p{L}+/gu) || []) for (const k in LATIN_SETS) if (LATIN_SETS[k].has(w)) score[k]++;
+  for (const w of String(text || "").slice(0, 12000).toLowerCase().match(/\p{L}+/gu) || [])
+    for (const k in LATIN_SETS) if (LATIN_SETS[k].has(w)) score[k]++;
   const best = Object.keys(score).reduce((a, b) => score[b] > score[a] ? b : a, "en");
   return best === "es" ? "es" : "en";
-}const words = lang => WORDS[lang] || WORDS.en;
+}
+const words = lang => WORDS[lang] || WORDS.en;
 
 function frontMatter(text){
   const meta = {};
@@ -952,7 +857,7 @@ function parseDoc(raw, name, o = {}){
     const f = first(), t = f.textContent.trim();
     if (f.tagName === "H1" || (o.firstLineTitle && /^H[2-6]$/.test(f.tagName))){ title = take().innerHTML; from = "doc"; }
     else if (f.tagName === "P"){
-      const looksTitle = t.length <= 90 && !/[.!?…:;,。！？：；，、]$/.test(t) && frag.children.length > 1;
+      const looksTitle = t.length <= 90 && !/[.!?…:;,]$/.test(t) && frag.children.length > 1;
       if ((isTxt && looksTitle) || (o.firstLineTitle && t.length <= 120)){ title = take().innerHTML; from = "doc"; }
     }
   }
@@ -1237,7 +1142,7 @@ function buildModel(){
     const p = parseDoc(doc.text, doc.name, doc.name === "pasted.md" ? { firstLineTitle: true, fallbackTitle: T().untitled } : {});
     applyImages(p.frag, doc.images); markDropcap(p.frag); addFin(p.frag);
     doc.detected = detectLang(p.text);
-    return { kind:"single", lang: doc.detected, sample: p.text, cover: doc.cover, style: p.style,
+    return { kind:"single", lang: doc.detected, cover: doc.cover, style: p.style,
              meta: { title:p.title, subtitle:p.subtitle, author:p.author, titleText:p.titleText }, frag: p.frag };
   }
   const allText = doc.chapters.map(c => c.text || "").join(" ") + " " + (doc.meta.title || "");
@@ -1256,7 +1161,7 @@ function buildModel(){
   const last = [...chapters].reverse().find(c => !c.missing);
   if (last) addFin(last.frag);
   const title = doc.meta.title ? plainHtml(doc.meta.title) : esc(doc.fallbackTitle || T().untitled);
-  return { kind:"book", lang, W, sample: allText, cover: doc.cover, style: doc.meta.style, chapters, notice: doc.notice && T()[doc.notice],
+  return { kind:"book", lang, W, cover: doc.cover, style: doc.meta.style, chapters, notice: doc.notice && T()[doc.notice],
            meta: { title, titleText: textOf(title),
                    subtitle: doc.meta.subtitle ? plainHtml(doc.meta.subtitle) : null,
                    author: doc.meta.author ? plainHtml(doc.meta.author) : null } };
@@ -1330,12 +1235,8 @@ function breakpoints(e){
   const pts = []; const isPre = e.tagName === "PRE";
   const w = document.createTreeWalker(e, NodeFilter.SHOW_TEXT); let t;
   while ((t = w.nextNode())){
-    // Spaces, or (for Chinese and Japanese) after any character that may end a line
-    const re = isPre ? /\n/g : /\s+|[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}\u3000-\u303f\uff01-\uff60ー](?![、。，．！？；：）」』】〉》ー…・\uff09\uff0c\uff0e\uff01\uff1f\uff1a\uff1b])/gu; let m;
-    while ((m = re.exec(t.nodeValue))){
-      if (/^[「『（【〈《\uff08]$/.test(m[0])) continue;   // never end a line on an opening bracket
-      pts.push({ node:t, offset:m.index + m[0].length });
-    }
+    const re = isPre ? /\n/g : /\s+/g; let m;
+    while ((m = re.exec(t.nodeValue))) pts.push({ node:t, offset:m.index + m[0].length });
   }
   return pts;
 }
@@ -1496,38 +1397,6 @@ function scaleToFit(){
 
 /* The language of the text being read (typography, hyphenation, book words) */
 function setLang(lang){ root.dataset.lang = lang; root.lang = lang; }
-/* Adds the script's font to every font token of the current style, just before the
-   generic family, so Latin letters keep the style's own font. */
-const FONT_TOKENS = ["--font-body","--font-display","--font-label","--font-ui","--dropcap-font"];
-const GENERIC = /^(serif|sans-serif|monospace|system-ui|ui-monospace|-apple-system|"?Segoe UI"?|Menlo|Consolas)$/i;
-const scriptJobs = {};
-let fontSeq = 0;
-async function scriptFonts(keys, sample){
-  const job = ++fontSeq;
-  const fonts = [...new Set(keys)].filter(k => SCRIPT_FONTS[k]).map(k => [k, SCRIPT_FONTS[k]]);
-  await Promise.all(fonts.map(([k, f]) => scriptJobs[k] || (scriptJobs[k] = new Promise(r => {
-    const l = document.createElement("link"); l.rel = "stylesheet";
-    l.href = GF + [f.serif, f.sans].map(n => "family=" + n.replace(/ /g, "+") + f.spec).join("&") + "&display=swap";
-    l.onload = r; l.onerror = r; setTimeout(r, 3000);
-    document.head.append(l);
-  }))));
-  if (job !== fontSeq) return;
-  FONT_TOKENS.forEach(t => root.style.removeProperty(t));
-  if (!fonts.length) return;
-  const cs = getComputedStyle(root);
-  const lists = FONT_TOKENS.map(t => cs.getPropertyValue(t).split(",").map(x => x.trim()).filter(Boolean));
-  lists.forEach((list, i) => {
-    const sans = list.some(x => /sans-serif|monospace|system-ui/i.test(x));
-    const g = list.findIndex(x => GENERIC.test(x));
-    list.splice(g < 0 ? list.length : g, 0, ...fonts.map(([, f]) => '"' + (sans ? f.sans : f.serif) + '"'));
-    root.style.setProperty(FONT_TOKENS[i], list.join(","));
-  });
-  if (document.fonts){
-    const text = String(sample || "").slice(0, 30000);
-    await Promise.race([Promise.all(fonts.flatMap(([, f]) => [f.serif, f.sans]).flatMap(n => [400, 600].map(w =>
-      document.fonts.load(w + ' 16px "' + n + '"', text).catch(() => {})))), sleep(4000)]);
-  }
-}
 
 let renderSeq = 0;
 async function render(keepPlace){
@@ -1545,7 +1414,6 @@ async function render(keepPlace){
 
   if (!doc){
     root.dataset.style = pickStyle(null); loadStyle(root.dataset.style); setLang(uiLang()); applyUI();
-    scriptFonts([uiLang()], $("#welcome").textContent);
     $("#welcome").hidden = false; $("#bar").hidden = true; $("#column").hidden = true; $("#pages").hidden = true;
     document.title = "TXTworm"; return;
   }
@@ -1557,9 +1425,6 @@ async function render(keepPlace){
   document.title = m.meta.titleText;
   setLang(m.lang);
   await loadStyle(root.dataset.style);
-  if (seq !== renderSeq) return;
-  // fonts follow the text's alphabet, plus the interface language's
-  await scriptFonts([detectScript(m.sample), uiLang()], m.sample + " " + $("#bar").textContent);
   if (seq !== renderSeq) return;
 
   if (st.mode === "scroll"){

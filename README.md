@@ -37,8 +37,8 @@ Nothing to install or build, and you don't need an account. Any aspiring writer 
 - **Five styles:** Book, Academic, Editorial, Concrete and Modern, each in light and dark.
 - **Book typography:** justified, hyphenated paragraphs; a drop cap on each story's first paragraph; curly quotes, em dashes and ellipses.
 - **Covers and pictures:** a cover for the book, a cover for each chapter, and pictures anywhere in the text. Pictures shaped like an A5 page fill a whole page.
-- **Six text languages:** English, Spanish, Chinese, Japanese, Hindi and Russian are detected automatically. Each gets its own hyphenation, fonts and book words (“Contents”, “Índice”, “目录”…). Other languages are read as English.
-- **An interface in your language:** menus and the opening screen follow your browser's language, and you can switch at any time.
+- **English and Spanish texts:** the language of each text is detected automatically. Hyphenation follows it, and the contents page is titled “Contents” or “Índice”. Texts in other languages are read as English.
+- **An interface in English or Spanish:** menus and the opening screen follow your browser's language, and you can switch at any time.
 - **Text size** with **−** and **+**, and it remembers your layout, size, style, theme and language.
 
 ![Reading modes: the A5 title page, an A5 chapter opening in light and dark, and the Scroll view](reading_modes.png)
@@ -211,15 +211,9 @@ It then appears in the Aa menu. Comments in the file explain each setting.
 
 ## Languages
 
-TXTworm works out the language of each text by itself. The language decides:
+TXTworm works out by itself whether a text is in English or Spanish. The language decides the hyphenation and the words the page writes: “Contents” or “Índice”, “Chapter 3” or “Capítulo 3”. Texts in any other language are treated as English.
 
-- hyphenation and the words the page writes (“Contents”, “Chapter 3”),
-- the fonts: Chinese, Japanese, Hindi and Russian get matching Noto fonts, while Latin letters keep the style's own font,
-- the typography: no drop cap in Chinese, Japanese or Hindi, and a two-character indent in Chinese and Japanese.
-
-In the A5 layout, Chinese and Japanese paragraphs break between pages by character, following the usual rules: a line never starts with 。 or 、.
-
-The interface (menus, buttons and the opening screen) appears in English, Spanish, Chinese, Hindi, Russian or Japanese, following your browser. Choose another from the row at the bottom of the opening screen, or from the language button in the toolbar. TXTworm remembers your choice.
+The interface (menus, buttons and the opening screen) is in Spanish when your browser is in Spanish, and in English otherwise. To switch, use the row at the bottom of the opening screen or the language button in the toolbar. TXTworm remembers your choice.
 
 ## Reading on your own computer
 
@@ -253,7 +247,7 @@ https://example.com/stories/index.html?file=the-lamplighter.md
 ## Good to know
 
 - Everything is in one file, `index.html`. There's nothing to install and no build step. The [download](https://jeronimovis.github.io/txtworm/download/txtworm.zip) always has the latest version.
-- Fonts come from Google Fonts, so the page needs an internet connection to look its best. Fonts for Chinese, Japanese, Hindi and Russian load only when a text needs them. Offline, the page falls back to fonts already on your computer.
+- Fonts come from Google Fonts, so the page needs an internet connection to look its best. Offline, the page falls back to fonts already on your computer.
 - If a folder has both a `text.md` and a `content.md`, the book wins.
 
 ## Logo
